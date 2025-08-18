@@ -24,7 +24,7 @@ export default function NavBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
 
   const handleOpenMenu = (event) => setAnchorEl(event.currentTarget);
   const handleCloseMenu = () => setAnchorEl(null);
@@ -43,8 +43,8 @@ export default function NavBar() {
   ];
 
   return (
-    <AppBar sx={{ backgroundColor: "#4A6B4A", minHeight:{xs:'60px',sm:'80px'} }}>
-      <Toolbar sx={{ display: "flex", pt: 1 }}>
+    <AppBar position="fixed" sx={{ backgroundColor: "#4A6B4A", minHeight:{xs:70,sm:80} }}>
+      <Toolbar sx={{ minHeight:{xs:70,sm:80} , display: "flex", pt: 1 }}>
         {/* Logo + Titles */}
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Box

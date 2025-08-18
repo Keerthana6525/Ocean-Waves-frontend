@@ -1,3 +1,4 @@
+// // 
 // import React from "react";
 // import Slider from "react-slick";
 // import "slick-carousel/slick/slick.css";
@@ -5,27 +6,87 @@
 // import { IconButton } from "@mui/material";
 // import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 
-
-
 // import cctvImg from "../assets/cctv-banner.jpg";
 // import networkImg from "../assets/network-banner.jpg";
 // import gateImg from "../assets/gate-banner.jpg";
 // import doorImg from "../assets/door-banner.jpg";
 // import porchImg from "../assets/porch-banner.jpg";
-// import officeImg from "../assets/office-banner.jpg";
-
+// import officeImg from "../assets/office.jpg";
 
 // const images = [
-//   { src: cctvImg, title: "PROVIDING THE BEST CCTV SECURITY"},
-//   { src: networkImg, title: "SEAMLESS CONNECTIVITY"},
-//   { src: gateImg},
-//   { src: doorImg, title: "ENHANCING SECURITY AND EFFICIENCY" },
-//   { src: porchImg, title: "GRACEFUL ENTRANCES, SECURE SPACES" },
-//   { src: officeImg }
-
+//   {
+//     src: cctvImg,
+//     title: "PROVIDING THE BEST CCTV SECURITY",
+//     style: {
+//       color: "black",
+//       top: "20%",
+//       left: "5%",
+//       fontSize: "2.5rem",
+//       textAlign: "left",
+//     },
+//   },
+//   {
+//     src: networkImg,
+//     title: "SEAMLESS CONNECTIVITY",
+//     style: {
+//       color: "#fff",
+//       top: "50%",
+//       left: "50%",
+//       transform: "translate(-50%, -50%)",
+//       fontSize: "2.8rem",
+//       textAlign: "center",
+//       opacity: "0.9",
+//     },
+//   },
+//   {
+//     src: gateImg,
+//     title: "SECURE GATEWAYS",
+//     style: {
+//       color: "#080909",
+//       top: "50%",
+//       left: "50%",
+//       transform: "translate(-50%, -50%)",
+//       fontSize: "2.8rem",
+//       textAlign: "center",
+//     },
+//   },
+//   {
+//     src: doorImg,
+//     title: "ENHANCING SECURITY AND EFFICIENCY",
+//     style: {
+//       color: "black",
+//       top: "20%",
+//       right: "8%",
+//       fontSize: "2.5rem",
+//       textAlign: "right",
+//     },
+//   },
+//   {
+//     src: porchImg,
+//     title: "GRACEFUL ENTRANCES, SECURE SPACES",
+//     style: {
+//       color: "black",
+//       top: "30%",
+//       left: "26%",
+//       fontSize: "2.5rem",
+//       textAlign: "center",
+//     },
+//   },
+//   {
+//     src: officeImg,
+//     title: "SAFE OFFICE ENVIRONMENTS",
+//     style: {
+//       color: "#000",
+//       top: "30%",
+//       left: "50%",
+//       transform: "translate(-50%, -50%)",
+//       fontSize: "2.8rem",
+//       textAlign: "center",
+//     },
+//   },
 // ];
 
-// // Custom Arrows
+// // Custom Next Arrow
 // function NextArrow(props) {
 //   const { onClick } = props;
 //   return (
@@ -39,7 +100,7 @@
 //         color: "white",
 //         backgroundColor: "rgba(0,0,0,0.5)",
 //         "&:hover": { backgroundColor: "rgba(0,0,0,0.7)" },
-//         zIndex: 1,
+//         zIndex: 2,
 //       }}
 //     >
 //       <ArrowForwardIos />
@@ -47,6 +108,7 @@
 //   );
 // }
 
+// // Custom Prev Arrow
 // function PrevArrow(props) {
 //   const { onClick } = props;
 //   return (
@@ -60,7 +122,7 @@
 //         color: "white",
 //         backgroundColor: "rgba(0,0,0,0.5)",
 //         "&:hover": { backgroundColor: "rgba(0,0,0,0.7)" },
-//         zIndex: 1,
+//         zIndex: 2,
 //       }}
 //     >
 //       <ArrowBackIos />
@@ -72,7 +134,7 @@
 //   const settings = {
 //     dots: false,
 //     infinite: true,
-//     speed: 500,
+//     speed: 600,
 //     slidesToShow: 1,
 //     slidesToScroll: 1,
 //     autoplay: true,
@@ -80,16 +142,31 @@
 //     arrows: true,
 //     nextArrow: <NextArrow />,
 //     prevArrow: <PrevArrow />,
-    
 //   };
 
-
 //   return (
-//     <div className="carousel-banner" style={{ width: "100%",height:"550px", marginTop:'100px'}}>
-//       <Slider {...settings} style = {{margin:0, padding:0, height:"550px"}}>
+//     <div
+//       className="carousel-banner"
+//       style={{
+//         width: "100%",
+//         height: "550px",
+//         margin: 0,
+//         paddingTop: "70px",
+//         overflow: "hidden",
+        
+//       }}
+//     >
+//       <Slider {...settings} style={{ height: "100%" }}>
 //         {images.map((slide, index) => (
-//           <div key={index} >
-//             <div style={{ position: "relative", width: "100%", height: "550px",background: "lightgray", }}>
+//           <div key={index}>
+//             <div
+//               style={{
+//                 position: "relative",
+//                 width: "100%",
+//                 height: "550px",
+//                 background: "lightgray",
+//               }}
+//             >
 //               <img
 //                 src={slide.src}
 //                 alt={`Slide ${index + 1}`}
@@ -97,31 +174,21 @@
 //                   width: "100%",
 //                   height: "100%",
 //                   objectFit: "cover",
-                    
 //                 }}
 //               />
-              
-
-//               {/* Text */}
-//               <div
-//                 style={{
-//                   position: "absolute",
-//                   top: 0,
-//                   left: 0,
-//                   right: 0,
-//                   bottom: 0,
-//                   display: "flex",
-//                   flexDirection: "column",
-//                   alignItems: "center",
-//                   justifyContent: "center",
-//                   textAlign: "center",
-//                   color: "#060606ff",
-//                   padding: "0 20px",
-//                 }}
-//               >
-//                 <h1 style={{ fontSize: "5vw", margin: 0, padding:0 }}>{slide.title}</h1>
-                
-//               </div>
+//               {/* Title */}
+//               {slide.title && (
+//                 <h1
+//                   style={{
+//                     position: "absolute",
+//                     margin: 0,
+//                     padding: 0,
+//                     ...slide.style,
+//                   }}
+//                 >
+//                   {slide.title}
+//                 </h1>
+//               )}
 //             </div>
 //           </div>
 //         ))}
@@ -136,8 +203,8 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { IconButton } from "@mui/material";
-import { ArrowBackIos, ArrowForwardIos, Opacity } from "@mui/icons-material";
+import { IconButton, useMediaQuery } from "@mui/material";
+import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 
 import cctvImg from "../assets/cctv-banner.jpg";
 import networkImg from "../assets/network-banner.jpg";
@@ -150,60 +217,42 @@ const images = [
   {
     src: cctvImg,
     title: "PROVIDING THE BEST CCTV SECURITY",
-    style: {
-      color: "black",
-      top: "20%",
-      left: "5%",
-      fontSize: "2.5rem",
-      textAlign: "left"
-    },
+    style: { color: "black", top: "20%", left: "5%", fontSize: "2.5rem", textAlign: "left" },
   },
   {
     src: networkImg,
     title: "SEAMLESS CONNECTIVITY",
     style: {
-      color: "#ffff",
+      color: "#fff",
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)",
-      fontSize: "2.8rem",
+      fontSize: "2.5rem",
       textAlign: "center",
-      Opacity:'0.8'
+      opacity: "0.9",
     },
   },
   {
     src: gateImg,
     title: "SECURE GATEWAYS",
     style: {
-      color: "#080909ff",
+      color: "#080909",
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)",
-      fontSize: "2.8rem",
-      textAlign: "center"
+      fontSize: "2.5rem",
+      textAlign: "center",
     },
   },
   {
     src: doorImg,
     title: "ENHANCING SECURITY AND EFFICIENCY",
-    style: {
-      color: "black",
-      top: "20%",
-      right: "8%",
-      fontSize: "2.5rem",
-      textAlign: "right"
-    },
+    style: { color: "black", top: "20%", right: "8%", fontSize: "2.5rem", textAlign: "right" },
   },
   {
     src: porchImg,
     title: "GRACEFUL ENTRANCES, SECURE SPACES",
-    style: {
-      color: "black",
-      top: "30%",
-      left: "26%",
-      fontSize: "2.5rem",
-      textAlign: "center"
-    },
+    style: { color: "black", top: "30%", left: "10%", fontSize: "2.5rem", textAlign: "center" },
   },
   {
     src: officeImg,
@@ -211,17 +260,16 @@ const images = [
     style: {
       color: "#000",
       top: "30%",
-      left: "47%",
+      left: "50%",
       transform: "translate(-50%, -50%)",
-      fontSize: "2.8rem",
-      textAlign: "center"
+      fontSize: "2.5rem",
+      textAlign: "center",
     },
   },
 ];
 
-// Custom Arrows
-function NextArrow(props) {
-  const { onClick } = props;
+// Custom Next Arrow
+function NextArrow({ onClick }) {
   return (
     <IconButton
       onClick={onClick}
@@ -233,7 +281,7 @@ function NextArrow(props) {
         color: "white",
         backgroundColor: "rgba(0,0,0,0.5)",
         "&:hover": { backgroundColor: "rgba(0,0,0,0.7)" },
-        zIndex: 1,
+        zIndex: 2,
       }}
     >
       <ArrowForwardIos />
@@ -241,8 +289,8 @@ function NextArrow(props) {
   );
 }
 
-function PrevArrow(props) {
-  const { onClick } = props;
+// Custom Prev Arrow
+function PrevArrow({ onClick }) {
   return (
     <IconButton
       onClick={onClick}
@@ -254,7 +302,7 @@ function PrevArrow(props) {
         color: "white",
         backgroundColor: "rgba(0,0,0,0.5)",
         "&:hover": { backgroundColor: "rgba(0,0,0,0.7)" },
-        zIndex: 1,
+        zIndex: 2,
       }}
     >
       <ArrowBackIos />
@@ -263,10 +311,12 @@ function PrevArrow(props) {
 }
 
 function Carousel() {
+  const isMobile = useMediaQuery("(max-width:768px)");
+
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -277,29 +327,44 @@ function Carousel() {
   };
 
   return (
-    <div className="carousel-banner" style={{ width: "100%", height: "550px", marginTop: "100px" }}>
-      <Slider {...settings} style={{ margin: 0, padding: 0, height: "550px" }}>
+    <div
+      className="carousel-banner"
+      style={{
+        width: "100%",
+        height: isMobile ? "300px" : "550px",
+        margin: 0,
+        paddingTop: "70px",
+        overflow: "hidden",
+      }}
+    >
+      <Slider {...settings} style={{ height: "100%" }}>
         {images.map((slide, index) => (
           <div key={index}>
-            <div style={{ position: "relative", width: "100%", height: "550px", background: "lightgray" }}>
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                height: isMobile ? "300px" : "550px", // Mobile adjusts
+                background: "lightgray",
+              }}
+            >
               <img
                 src={slide.src}
                 alt={`Slide ${index + 1}`}
                 style={{
                   width: "100%",
                   height: "100%",
-                  objectFit: "cover",
+                  objectFit: "cover", //  keeps image proportion
                 }}
               />
-
-              {/* Title - dynamic style per slide */}
               {slide.title && (
                 <h1
                   style={{
                     position: "absolute",
                     margin: 0,
                     padding: 0,
-                    ...slide.style, // apply unique styles from array
+                    fontSize: isMobile ? "1.2rem" : slide.style.fontSize, //  smaller text on mobile
+                    ...slide.style,
                   }}
                 >
                   {slide.title}
