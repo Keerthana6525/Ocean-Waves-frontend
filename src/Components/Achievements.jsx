@@ -38,6 +38,7 @@ function Achievements() {
 
             <Box
         sx={{
+          bgcolor: "#fff",
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",

@@ -41,6 +41,7 @@ function Products() {
         <Typography
           variant="h3"
           fontWeight="bold"
+          color="#000"
           gutterBottom
           sx={{ textAlign:"center" }}
         >
