@@ -85,12 +85,13 @@ function Achievements() {
 
 
       {/* Achievement cards */}
-      <Box sx={{ px: 2, py: 4}}>
+      <Box sx={{ px: 2, py: 4,bgcolor: "#fff"}}>
         <Grid
           container
           spacing={4}
           justifyContent="center"
           alignItems="stretch"
+          
         >
           {achievementCards.map((item, index) => (
             <Grid
