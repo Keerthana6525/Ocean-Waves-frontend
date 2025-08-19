@@ -17,6 +17,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useTheme } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";  //  import navigate hook
 import logo from "../assets/ocean-waves.png";
 
 export default function NavBar() {
@@ -25,6 +26,7 @@ export default function NavBar() {
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
+  const navigate = useNavigate(); // create navigate function
 
   const handleOpenMenu = (event) => setAnchorEl(event.currentTarget);
   const handleCloseMenu = () => setAnchorEl(null);
@@ -36,7 +38,11 @@ export default function NavBar() {
     { text: "ABOUT US", link: "/about" },
     {
       text: "SERVICES",
-      subItems: ["CCTV", "Biometrics", "Access Control"],
+      subItems: [
+        { text: "CCTV", link: "/services/cctv" },
+        { text: "Biometrics", link: "/services/biometrics" },
+        { text: "Access Control", link: "/services/access-control" },
+      ],
     },
     { text: "PRODUCTS", link: "/products" },
     { text: "CONTACT", link: "/contact" },
@@ -46,7 +52,7 @@ export default function NavBar() {
     <AppBar position="fixed" sx={{ backgroundColor: "#4A6B4A", minHeight:{xs:70,sm:80} }}>
       <Toolbar sx={{ minHeight:{xs:70,sm:80} , display: "flex", pt: 1 }}>
         {/* Logo + Titles */}
-        <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Box sx={{ display: "flex", alignItems: "center", cursor:"pointer" }} onClick={() => navigate("/")}>
           <Box
             component="img"
             src={logo}
@@ -93,10 +99,10 @@ export default function NavBar() {
               ml: "auto",
             }}
           >
-            <Button sx={{ color: "white", fontSize:{sm:'10px',md:'20px'}, fontFamily: "Arial" }} href="/">
+            <Button sx={{ color: "white", fontSize:{sm:'10px',md:'20px'}, fontFamily: "Arial" }} onClick={() => navigate("/")}>
               HOME
             </Button>
-            <Button sx={{ color: "white", fontSize:{sm:'10px',md:'20px'}, fontFamily: "Arial" }} href="/about">
+            <Button sx={{ color: "white", fontSize:{sm:'10px',md:'20px'}, fontFamily: "Arial" }} onClick={() => navigate("/about")}>
               ABOUT US
             </Button>
             <Button
@@ -107,14 +113,16 @@ export default function NavBar() {
               SERVICES
             </Button>
             <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleCloseMenu}>
-              <MenuItem onClick={handleCloseMenu}>CCTV</MenuItem>
-              <MenuItem onClick={handleCloseMenu}>Biometrics</MenuItem>
-              <MenuItem onClick={handleCloseMenu}>Access Control</MenuItem>
+              {menuItems[2].subItems.map((sub, i) => (
+                <MenuItem key={i} onClick={() => { handleCloseMenu(); navigate(sub.link); }}>
+                  {sub.text}
+                </MenuItem>
+              ))}
             </Menu>
-            <Button sx={{ color: "white", fontSize: {sm:'10px',md:'20px'}, fontFamily: "Arial" }} href="/products">
+            <Button sx={{ color: "white", fontSize: {sm:'10px',md:'20px'}, fontFamily: "Arial" }} onClick={() => navigate("/products")}>
               PRODUCTS
             </Button>
-            <Button sx={{ color: "white", fontSize: {sm:'10px',md:'20px'}, fontFamily: "Arial" }} href="/contact">
+            <Button sx={{ color: "white", fontSize: {sm:'10px',md:'20px'}, fontFamily: "Arial" }} onClick={() => navigate("/contact")}>
               CONTACT
             </Button>
           </Box>
@@ -136,13 +144,13 @@ export default function NavBar() {
                           <ListItemText primary={item.text} />
                         </ListItem>
                         {item.subItems.map((sub, i) => (
-                          <ListItem button key={i}>
-                            <ListItemText primary={`- ${sub}`} />
+                          <ListItem button key={i} onClick={() => navigate(sub.link)}>
+                            <ListItemText primary={`- ${sub.text}`} />
                           </ListItem>
                         ))}
                       </React.Fragment>
                     ) : (
-                      <ListItem button key={index}>
+                      <ListItem button key={index} onClick={() => navigate(item.link)}>
                         <ListItemText primary={item.text} />
                       </ListItem>
                     )
@@ -156,3 +164,4 @@ export default function NavBar() {
     </AppBar>
   );
 }
+

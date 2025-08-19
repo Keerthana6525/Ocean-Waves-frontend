@@ -16,7 +16,7 @@ const images = [
   {
     src: cctvImg,
     title: "PROVIDING THE BEST CCTV SECURITY",
-    style: { color: "black", top: "20%", left: "5%", fontSize: "2.5rem", textAlign: "left" },
+    style: { color: "black", top: "20%", left: "5%", textAlign: "left" },
   },
   {
     src: networkImg,
@@ -26,7 +26,6 @@ const images = [
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)",
-      fontSize: "2.5rem",
       textAlign: "center",
       opacity: "0.9",
     },
@@ -39,19 +38,18 @@ const images = [
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)",
-      fontSize: "2.5rem",
       textAlign: "center",
     },
   },
   {
     src: doorImg,
     title: "ENHANCING SECURITY AND EFFICIENCY",
-    style: { color: "black", top: "20%", right: "8%", fontSize: "2.5rem", textAlign: "right" },
+    style: { color: "black", top: "20%", right: "8%", textAlign: "right" },
   },
   {
     src: porchImg,
     title: "GRACEFUL ENTRANCES, SECURE SPACES",
-    style: { color: "black", top: "30%", left: "10%", fontSize: "2.5rem", textAlign: "center" },
+    style: { color: "black", top: "30%", left: "10%", textAlign: "center" },
   },
   {
     src: officeImg,
@@ -61,7 +59,6 @@ const images = [
       top: "30%",
       left: "50%",
       transform: "translate(-50%, -50%)",
-      fontSize: "2.5rem",
       textAlign: "center",
     },
   },
@@ -110,7 +107,16 @@ function PrevArrow({ onClick }) {
 }
 
 function Carousel() {
+  // Responsive breakpoints
   const isMobile = useMediaQuery("(max-width:768px)");
+  const isTablet = useMediaQuery("(max-width:1024px)");
+
+  // Function to control font size
+  const getFontSize = () => {
+    if (isMobile) return "1.2rem";
+    if (isTablet) return "1.8rem";
+    return "2.5rem"; // Desktop
+  };
 
   const settings = {
     dots: false,
@@ -132,7 +138,7 @@ function Carousel() {
         width: "100%",
         height: isMobile ? "320px" : "590px",
         margin: 0,
-        paddingTop: "70px",
+        // paddingTop: "70px",
         overflow: "hidden",
       }}
     >
@@ -143,7 +149,7 @@ function Carousel() {
               style={{
                 position: "relative",
                 width: "100%",
-                height: isMobile ? "320px" : "590px", // Mobile adjusts
+                height: isMobile ? "320px" : "590px",
                 background: "lightgray",
               }}
             >
@@ -153,7 +159,7 @@ function Carousel() {
                 style={{
                   width: "100%",
                   height: "100%",
-                  objectFit: "cover", //  keeps image proportion
+                  objectFit: "cover",
                 }}
               />
               {slide.title && (
@@ -162,7 +168,7 @@ function Carousel() {
                     position: "absolute",
                     margin: 0,
                     padding: 0,
-                    fontSize: isMobile ? "1.2rem" : slide.style.fontSize, //  smaller text on mobile
+                    fontSize: getFontSize(),
                     ...slide.style,
                   }}
                 >

@@ -6,6 +6,18 @@ body, html, #root {
   height: 100%;
 }
 
+body {
+  padding-top: 64px; /* adjust if your navbar height is different */
+}
+
+* {
+  box-sizing: border-box;
+}
+.container {
+  max-width: 600px;
+}
+
+
 .logo {
   height: 6em;
   padding: 1.5em;

@@ -1,36 +1,75 @@
-import { useState } from 'react'
-import './App.css'
-import NavBar from './Components/NavBar'
-import Carousel from'./Components/Carousel'
-import AnnouncementBar from './Components/Announcement'
-import Achievements from './Components/Achievements'
-import About from './Components/About'
-import Services from './Components/Services'
-import Footer from './Components/Footer'
-import Products from './Components/Products'
-import Accessories from './Components/Accessories'
-import Officeequp from './Components/Officeequp'
-import Brands from './Components/Brands'
 
 
-function App() {
-  const [count, setCount] = useState(0)
 
+import { useState } from "react";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import NavBar from "./Components/NavBar";
+import Carousel from "./Components/Carousel";
+import AnnouncementBar from "./Components/Announcement";
+import Achievements from "./Components/Achievements";
+import About from "./Components/About";
+import Services from "./Components/Services";
+import Footer from "./Components/Footer";
+import Products from "./Components/Products";
+import Accessories from "./Components/Accessories";
+import Officeequp from "./Components/Officeequp";
+import Brands from "./Components/Brands";
+
+import AboutUs from "./Pages/AboutUs";
+import Contact from "./Pages/Contact"
+// import Product from "./Pages/Product"
+
+
+function AppContent() {
+  const location = useLocation();
+
+  // Routes that show only Navbar + Footer
+  const minimalLayoutRoutes = [
+    "/about","/contact"
+    
+  ];
+
+  if (minimalLayoutRoutes.includes(location.pathname)) {
+    return (
+      <>
+        <NavBar />
+        <Routes>
+          <Route path="/about" element={<AboutUs/>} />
+          <Route path="/contact" element={<Contact/>}/>
+          {/* <Route  path="/products" element={<Product/>} /> */}
+        </Routes>
+        <Footer />
+      </>
+    );
+  }
+
+  // Default full layout (Home Page)
   return (
     <>
-     <NavBar/>
-     <Carousel/>
-     <AnnouncementBar/>
-     <Achievements/>
-     <About/>
-     <Services/>
-     <Products/>
-     <Accessories/>
-     <Officeequp/>
-     <Brands/>
-     <Footer/>
+      <NavBar />
+      <Carousel />
+      <AnnouncementBar />
+      <Achievements />
+      <About />
+      <Services />
+      <Products />
+      <Accessories />
+      <Officeequp />
+      <Brands />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/*" element={<AppContent />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
