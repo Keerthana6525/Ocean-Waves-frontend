@@ -35,6 +35,7 @@ export default function Contact() {
 
   return (
     <>
+    <Box  sx={{backgroundColor:"#ffff"}}>
       {/* Banner */}
       <Box
         sx={{
@@ -254,7 +255,7 @@ export default function Contact() {
         </Grid>
       </Container>
 
-      
+     </Box> 
     </>
   );
 }

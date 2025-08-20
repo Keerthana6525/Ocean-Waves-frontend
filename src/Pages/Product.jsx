@@ -143,7 +143,7 @@ function Products() {
         </Box>
 
         {/* CCTV Section */}
-        <Box sx={{ p: 7, boxShadow: 5, backgroundColor: "#fff", mb: 4 }}>
+        <Box sx={{ p: { xs: 2, sm: 3, md: 7 }, boxShadow: 5, backgroundColor: "#fff", mb: 4 }}>
           <Typography fontWeight={"bold"} variant="h4" mb={2} textAlign={"center"}>
             CCTV SYSTEM
           </Typography>
@@ -151,7 +151,7 @@ function Products() {
         </Box>
 
         {/* Office Section */}
-        <Box sx={{ p: 7, boxShadow: 5, backgroundColor: "#fff", mb: 4 }}>
+        <Box sx={{ p: { xs: 2, sm: 3, md: 7 }, boxShadow: 5, backgroundColor: "#fff", mb: 4 }}>
           <Typography fontWeight={"bold"} variant="h4" mb={2} textAlign={"center"}>
             OFFICE EQUIPMENTS & COMPUTERS
           </Typography>
@@ -159,7 +159,7 @@ function Products() {
         </Box>
 
         {/* Network Section */}
-        <Box sx={{ p: 7, boxShadow: 5, backgroundColor: "#fff" }}>
+        <Box sx={{ p: { xs: 2, sm: 3, md: 7 }, boxShadow: 5, backgroundColor: "#fff" }}>
           <Typography fontWeight={"bold"} variant="h4" mb={2} textAlign={"center"}>
             NETWORK SOLUTIONS
           </Typography>
@@ -167,7 +167,7 @@ function Products() {
         </Box>
 
         {/* Door Section */}
-        <Box sx={{ p: 7, boxShadow: 5, backgroundColor: "#fff" }}>
+        <Box sx={{ p: { xs: 2, sm: 3, md: 7 }, boxShadow: 5, backgroundColor: "#fff" }}>
           <Typography fontWeight={"bold"} variant="h4" mb={2} textAlign={"center"}>
             DOOR ACCESS & BIOMETRIC ATTENDANCE REGISTER
           </Typography>
