@@ -43,7 +43,7 @@ const AboutUs = () => {
    the capital of United Arab Emirates...`;
 
   return (
-    <Box sx={{ pt: { xs: 14, md: 16 }, pb: {xs:5,md:10}, px: 2 ,bgcolor: "#eff5f1ff"}}>
+    <Box sx={{ pt: { xs: 14, md: 16 }, pb: {xs:5,md:10}, px: 2 ,bgcolor: "#f9fcfaff"}}>
       <Container>
         <CustomBox>
           <ImgContainer>

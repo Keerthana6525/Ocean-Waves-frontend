@@ -18,6 +18,10 @@ import Brands from "./Components/Brands";
 
 import AboutUs from "./Pages/AboutUs";
 import Contact from "./Pages/Contact"
+import Product from "./Pages/Product"
+import Servicecctv from "./Pages/Servicecctv";
+import Network from "./Pages/Network"
+
 // import Product from "./Pages/Product"
 
 
@@ -26,7 +30,7 @@ function AppContent() {
 
   // Routes that show only Navbar + Footer
   const minimalLayoutRoutes = [
-    "/about","/contact"
+    "/about","/contact","/products","/servicecctv","/network"
     
   ];
 
@@ -37,7 +41,9 @@ function AppContent() {
         <Routes>
           <Route path="/about" element={<AboutUs/>} />
           <Route path="/contact" element={<Contact/>}/>
-          {/* <Route  path="/products" element={<Product/>} /> */}
+          <Route  path="/products" element={<Product/>} />
+          <Route path="/servicecctv" element={<Servicecctv/>}/>
+          <Route path="/network" element={<Network/>}/>
         </Routes>
         <Footer />
       </>

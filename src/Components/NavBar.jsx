@@ -39,9 +39,13 @@ export default function NavBar() {
     {
       text: "SERVICES",
       subItems: [
-        { text: "CCTV", link: "/services/cctv" },
-        { text: "Biometrics", link: "/services/biometrics" },
-        { text: "Access Control", link: "/services/access-control" },
+        { text: "SECURITY & SURVIVALENCE", link: "/servicecctv" },
+        { text: "NETWORK SOLUTIONS", link: "/network" },
+        { text: "DOOR ACCESS & BIOMETRIC TIME ATTENDANCE", link: "/door_bio" },
+        { text: "SWING & SLIDING GATES", link: "/gates" },
+        { text: "TEND & CAR PORCHES", link: "/porches" },
+        { text: "OFFICE EQUIPMENTS AND COMPUTERS", link: "/computers" },
+
       ],
     },
     { text: "PRODUCTS", link: "/products" },
