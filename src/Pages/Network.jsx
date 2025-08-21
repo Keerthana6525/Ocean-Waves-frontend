@@ -1,5 +1,18 @@
-import React from "react";
-import { Box, Typography, Button } from "@mui/material";
+
+import React, { useState } from "react";
+import {
+  Box,
+  Typography,
+  Button,
+  Container,
+  Grid,
+  Card,
+  CardMedia,
+  CardContent,
+  styled,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
@@ -15,6 +28,18 @@ import img3 from "../assets/acc-3.jpg";
 import img4 from "../assets/acc-4.jpg";
 import img5 from "../assets/acc-5.jpg";
 
+// About Us Image
+import aboutimg2 from "../assets/network-about-img.jpg";
+
+// Services Images
+import service1 from "../assets/cctv-ser.jpg"; 
+import service2 from "../assets/office-ser.jpg";
+import service3 from "../assets/door-acess-ser.jpg";
+import service4 from "../assets/gate-ser.jpg";
+import service5 from "../assets/networks-ser.jpg";
+import service6 from "../assets/car-proches-ser.jpg";
+
+
 const networkProducts = [
   { src: img1, name: "Router" },
   { src: img2, name: "Switch" },
@@ -23,9 +48,51 @@ const networkProducts = [
   { src: img5, name: "Server Rack" },
 ];
 
+const services = [
+  { src: service1, name:  "CCTV Security System"},
+  { src: service2, name: "Office Equipments & Computers" },
+  { src: service3, name: "Door Access & Attendance System" },
+  { src: service4, name: "Swing & Sliding Gate" },
+  { src: service5, name: "Network Surveillance" },
+  { src: service6, name: "Tent & Car Porch" },
+
+];
+
 function Network() {
+  const [showMore, setShowMore] = useState(false);
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+
+  const CustomBox = styled(Box)(({ theme }) => ({
+    display: "flex",
+    gap: theme.spacing(10),
+    alignItems: "center",
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column",
+      textAlign: "center",
+    },
+  }));
+
+  const ImgContainer = styled(Box)(({ theme }) => ({
+    width: "100%",
+    [theme.breakpoints.down("md")]: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    },
+  }));
+
+  const fullText = `OceanWaves is a cutting-edge technology company specializing in providing top-notch
+   Network Solutions for businesses seeking a robust and reliable online presence. With a commitment to
+    excellence, OceanWaves offers a comprehensive suite of services tailored to meet the diverse needs of
+     its clients. From seamless domain registration to secure and scalable website hosting, OceanWaves ensures that businesses can navigate the digital landscape with confidence. The company's experienced team of professionals is dedicated to delivering innovative solutions that optimize network performance, enhance security, and foster online growth. With OceanWaves as your trusted partner, you can ride the waves of the digital era with a secure
+   and efficient network infrastructure, setting the stage for success in the online domain.`;
+
+  const shortText = `OceanWaves is a cutting-edge technology company specializing in providing top-notch
+   Network Solutions for businesses seeking a robust and reliable online presence..`;
+
   return (
-    <Box sx={{ bgcolor: "#f5f5f5", pb: 6 }}>
+    <Box sx={{ bgcolor: "#ffff", pb: 6 }}>
       {/* Banner Section */}
       <Box
         sx={{
@@ -53,15 +120,15 @@ function Network() {
             textAlign: "center",
           }}
         >
-          Networking Solutions
+          NETWORKING SOLUTIONS
         </Typography>
       </Box>
 
       {/* Slider Section */}
-      <Box sx={{ maxWidth: "1200px", mx: "auto", px: 2 }}>
+      <Box sx={{ maxWidth: "1200px", mx: "auto", px: 2 ,bgcolor:"#fff"}}>
         <Typography
           variant="h5"
-          sx={{ fontWeight: "bold", mb: 3, textAlign: "center" }}
+          sx={{ fontWeight: "bold", mb: 3, textAlign: "center",color:"#000"}}
         >
           Our Network Products
         </Typography>
@@ -117,8 +184,8 @@ function Network() {
                 <Button
                   variant="contained"
                   sx={{
-                    bgcolor: "#004080",
-                    "&:hover": { bgcolor: "#0066cc" },
+                    bgcolor: "#5f8354ff",
+                    "&:hover": { bgcolor: "#4d6b49ff" },
                   }}
                 >
                   Enquiry
@@ -128,8 +195,103 @@ function Network() {
           ))}
         </Swiper>
       </Box>
+
+      {/* About Us Section */}
+      <Box
+        sx={{
+          pt: { xs: 10, md: 14 },
+          pb: { xs: 5, md: 10 },
+          px: 2,
+          mt: 6,
+          bgcolor: "#f9fcfaff",
+        }}
+      >
+        <Container>
+          <CustomBox>
+            <ImgContainer>
+              <Box
+                component="img"
+                src={aboutimg2}
+                alt="about"
+                sx={{
+                  maxWidth: "500px",
+                  width: {
+                    xs: "250px",
+                    sm: "300px",
+                    md: "500px",
+                  },
+                  height: "auto",
+                }}
+              />
+            </ImgContainer>
+
+            <Box>
+              
+              <Typography
+                sx={{ fontSize: "18px", color: "black", lineHeight: "27px" }}
+              >
+                {isSmallScreen && !showMore ? shortText : fullText}
+              </Typography>
+
+              {isSmallScreen && (
+                <Button onClick={() => setShowMore(!showMore)} sx={{ mt: 2 }}>
+                  {showMore ? "Show Less" : "Read More"}
+                </Button>
+              )}
+            </Box>
+          </CustomBox>
+        </Container>
+      </Box>
+
+      {/* Types of Services Section */}
+      <Box sx={{ py: 8, bgcolor: "#fff" }}>
+        <Container>
+          <Typography
+            variant="h4"
+            sx={{
+              textAlign: "center",
+              mb: 5,
+              fontWeight: "bold",
+              color: "#333",
+            }}
+          >
+            Types Of Services
+          </Typography>
+
+          <Grid container spacing={4} justifyContent="center">
+            {services.map((service, index) => (
+              <Grid item xs={12} sm={6} md={3} key={index}>
+                <Card
+                  sx={{
+                    borderRadius: 2,
+                    boxShadow: 3,
+                    transition: "transform 0.3s",
+                    "&:hover": { transform: "scale(1.05)" },
+                  }}
+                >
+                  <CardMedia
+                    component="img"
+                    height="200"
+                    image={service.src}
+                    alt={service.name}
+                  />
+                  <CardContent>
+                    <Typography
+                      variant="subtitle1"
+                      sx={{ textAlign: "center", fontWeight: "bold" }}
+                    >
+                      {service.name}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
     </Box>
   );
 }
 
 export default Network;
+
