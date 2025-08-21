@@ -1,172 +1,475 @@
-import React, { useState } from 'react';
-import { styled, Typography, Button, useTheme, useMediaQuery } from "@mui/material";
-import { Box, Container } from "@mui/system";
-import servicecctvimg from "../assets/cctvser1.jpg";
+// import React, { useState } from 'react';
+// import { styled, Typography, Button, useTheme, useMediaQuery } from "@mui/material";
+// import { Box, Container } from "@mui/system";
+// import servicecctvimg from "../assets/cctvser1.jpg";
 
-import img1 from "../assets/cctvbanner.jpg";
-import img2 from "../assets/cctv-camers.jpg";
-import img3 from "../assets/cctv-cablefree.jpg";
-import img4 from "../assets/cctv-surveillance-camera.jpg";
+// import img1 from "../assets/cctvbanner.jpg";
+// import img2 from "../assets/cctv-camers.jpg";
+// import img3 from "../assets/cctv-cablefree.jpg";
+// import img4 from "../assets/cctv-surveillance-camera.jpg";
 
 
-const Servicecctv = () => {
+// const Servicecctv = () => {
+//   const [showMore, setShowMore] = useState(false);
+//   const theme = useTheme();
+//   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+
+//   const CustomBox = styled(Box)(({ theme }) => ({
+//     display: 'flex',
+//     gap: theme.spacing(10),
+//     alignItems: 'center',
+//     [theme.breakpoints.down("md")]: {
+//       flexDirection: 'column',
+//       textAlign: 'center',
+//     },
+//   }));
+
+//   const ImgContainer = styled(Box)(({ theme }) => ({
+//     width: "100%",
+//     [theme.breakpoints.down("md")]: {
+//       display: 'flex',
+//       flexDirection: 'column',
+//       alignItems: 'center',
+//     },
+//   }));
+
+//   const fullText = `Get the ultimate security for your business or home premises with our advanced CCTV 
+//   and Access control system in Dubai, UAE. Our sophisticated camera monitoring and access-controls will 
+//   give you peace of mind knowing that your property is safe and secure from any threats or intrusions. 
+//   Let us help you fortify your premises with a tailor-made solution to fit all of your needs. Take 
+//   advantage of our expertise and experience, and enjoy complete protection with customized solutions
+//    that go beyond the ordinary! We are always promised to provide impeccable customer service and support.
+//     We are selling the leading CCTV brand cameras like HikVision, UNV, Dahua, etc. We have a bunch of skilled 
+//     certified CCTV professionals to install CCTV surveillance cameras in your home, villa, or business. Our 
+//     experience and expertise in CCTV help us understand the client’s concerns and requirements for 
+//   the safety and security of their premises quickly and deliver the optimum result to satisfy them.
+
+// `
+
+//   const shortText = `Get the ultimate security for your business or home premises with our advanced CCTV 
+//   and Access control system in Dubai, UAE. Our sophisticated camera monitoring and access-controls `;
+
+//   return (
+//     <Box sx={{ pt: { xs: 10, md: 16 }, pb: {xs:5,md:10}, px: 2 ,bgcolor: "#fff"}}>
+//       <Container>
+//         <Box
+//       sx={{
+//         position:"relative",
+//         width: "100%",
+//         height: "300px",
+//         display: "grid",
+//         gridTemplateColumns: "2fr 1fr 1fr 1fr 1fr",
+//         gridTemplateRows: "1fr",
+//         // gap: "1px",
+//         overflow: "hidden",
+//         borderRadius: 2
+//       }}
+//     >
+//       {/* Large Image (takes more space) */}
+//       <Box
+//         component="img"
+//         src={img1}
+//         alt="img1"
+//         sx={{
+//           width: "100%",
+//           height: "100%",
+//           objectFit: "cover",
+//           borderRadius: 2,
+//           gridColumn: "span 2", // takes 2 column width
+//         }}
+//       />
+//       {/* Other smaller images */}
+//       <Box
+//         component="img"
+//         src={img2}
+//         alt="img2"
+//         sx={{
+//           width: "100%",
+//           height: "100%",
+//           objectFit: "cover",
+//           borderRadius: 2,
+//         }}
+//       />
+//       <Box
+//         component="img"
+//         src={img3}
+//         alt="img3"
+//         sx={{
+//           width: "100%",
+//           height: "100%",
+//           objectFit: "cover",
+//           borderRadius: 2,
+//         }}
+//       />
+//       <Box
+//         component="img"
+//         src={img4}
+//         alt="img4"
+//         sx={{
+//           width: "100%",
+//           height: "100%",
+//           objectFit: "cover",
+//           borderRadius: 2,
+//         }}
+//       />
+//       {/* Overlay Title */}
+//   <Typography
+//     variant="h3"
+//     sx={{
+//       position: "absolute",
+//       top: "50%",
+//       left: "50%",
+//       transform: "translate(-50%, -50%)",
+//       color: "#180303ff",
+//       fontWeight: "bold",
+//       textShadow: "2px 2px 8px rgba(0,0,0,0.7)",
+//       textAlign: "center",
+//       px: 2,
+//     }}
+//   >
+//     Security & Surveillance
+//   </Typography>
+//     </Box>
+//         <CustomBox sx={{mt:5}}>
+//           <ImgContainer>
+            
+//             <Box
+//                     component="img"
+//                     src={servicecctvimg}
+//                     alt="about"
+//                     sx={{
+//                     maxWidth: '600px',
+//                     width: {
+//                         xs: '250px',
+//                         sm: '400px',
+//                         md: '500px',
+//                     },
+//                     height: 'auto',
+//                     // border:'3px solid black'
+//                     }}
+//                 />    
+//           </ImgContainer>
+
+//           <Box>
+           
+
+//             <Typography sx={{ fontSize: '16px', color: 'black', lineHeight: '27px' }}>
+//               {isSmallScreen && !showMore ? shortText : fullText}
+//             </Typography>
+
+//             {isSmallScreen && (
+//               <Button onClick={() => setShowMore(!showMore)} sx={{ mt: 2 }}>
+//                 {showMore ? "Show Less" : "Read More"}
+//               </Button>
+//             )}
+//           </Box>
+//         </CustomBox>
+//       </Container>
+//     </Box>
+//   );
+// }
+
+// export default Servicecctv;
+
+
+
+import React, { useState } from "react";
+import {
+  Box,
+  Typography,
+  Button,
+  Container,
+  Grid,
+  Card,
+  CardMedia,
+  CardContent,
+  styled,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+
+// Banner Image
+import bannerImg from "../assets/cctv-banner1.jpg";
+
+// Example Network Product Images
+import img1 from "../assets/cctv-camers.jpg";
+import img2 from "../assets/cctvser1.jpg";
+import img3 from "../assets/cctv-surveillance-camera.jpg";
+import img4 from "../assets/cctv1.jpg";
+import img5 from "../assets/cctv-cablefree.jpg";
+import img6 from "../assets/cctv.jpg";
+
+
+// About Us Image
+import aboutimg2 from "../assets/cctvbanner.jpg";
+
+// Services Images
+import service1 from "../assets/cctv-ser.jpg"; 
+import service2 from "../assets/office-ser.jpg";
+import service3 from "../assets/door-acess-ser.jpg";
+import service4 from "../assets/gate-ser.jpg";
+import service5 from "../assets/networks-ser.jpg";
+import service6 from "../assets/car-proches-ser.jpg";
+
+
+const networkProducts = [
+  { src: img1},
+  { src: img2 },
+  { src: img3 },
+  { src: img4 },
+  { src: img5 },
+    { src: img6 },
+
+];
+
+const services = [
+  { src: service1, name:  "CCTV Security System"},
+  { src: service2, name: "Office Equipments & Computers" },
+  { src: service3, name: "Door Access & Attendance System" },
+  { src: service4, name: "Swing & Sliding Gate" },
+  { src: service5, name: "Network Surveillance" },
+  { src: service6, name: "Tent & Car Porch" },
+
+];
+
+function Servicecctv() {
   const [showMore, setShowMore] = useState(false);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   const CustomBox = styled(Box)(({ theme }) => ({
-    display: 'flex',
+    display: "flex",
     gap: theme.spacing(10),
-    alignItems: 'center',
+    alignItems: "center",
     [theme.breakpoints.down("md")]: {
-      flexDirection: 'column',
-      textAlign: 'center',
+      flexDirection: "column",
+      textAlign: "center",
     },
   }));
 
   const ImgContainer = styled(Box)(({ theme }) => ({
     width: "100%",
     [theme.breakpoints.down("md")]: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
     },
   }));
 
-  const fullText = `Get the ultimate security for your business or home premises with our advanced CCTV 
-  and Access control system in Dubai, UAE. Our sophisticated camera monitoring and access-controls will 
-  give you peace of mind knowing that your property is safe and secure from any threats or intrusions. 
-  Let us help you fortify your premises with a tailor-made solution to fit all of your needs. Take 
-  advantage of our expertise and experience, and enjoy complete protection with customized solutions
-   that go beyond the ordinary! We are always promised to provide impeccable customer service and support.
-    We are selling the leading CCTV brand cameras like HikVision, UNV, Dahua, etc. We have a bunch of skilled 
-    certified CCTV professionals to install CCTV surveillance cameras in your home, villa, or business. Our 
-    experience and expertise in CCTV help us understand the client’s concerns and requirements for 
-  the safety and security of their premises quickly and deliver the optimum result to satisfy them.
+  const fullText = `OceanWaves is a cutting-edge technology company specializing in providing top-notch
+   Network Solutions for businesses seeking a robust and reliable online presence. With a commitment to
+    excellence, OceanWaves offers a comprehensive suite of services tailored to meet the diverse needs of
+     its clients. From seamless domain registration to secure and scalable website hosting, OceanWaves ensures that businesses can navigate the digital landscape with confidence. The company's experienced team of professionals is dedicated to delivering innovative solutions that optimize network performance, enhance security, and foster online growth. With OceanWaves as your trusted partner, you can ride the waves of the digital era with a secure
+   and efficient network infrastructure, setting the stage for success in the online domain.`;
 
-`
-
-  const shortText = `Get the ultimate security for your business or home premises with our advanced CCTV 
-  and Access control system in Dubai, UAE. Our sophisticated camera monitoring and access-controls `;
+  const shortText = `OceanWaves is a cutting-edge technology company specializing in providing top-notch
+   Network Solutions for businesses seeking a robust and reliable online presence..`;
 
   return (
-    <Box sx={{ pt: { xs: 10, md: 16 }, pb: {xs:5,md:10}, px: 2 ,bgcolor: "#fff"}}>
-      <Container>
-        <Box
-      sx={{
-        position:"relative",
-        width: "100%",
-        height: "300px",
-        display: "grid",
-        gridTemplateColumns: "2fr 1fr 1fr 1fr 1fr",
-        gridTemplateRows: "1fr",
-        // gap: "1px",
-        overflow: "hidden",
-        borderRadius: 2
-      }}
-    >
-      {/* Large Image (takes more space) */}
+    <Box sx={{ bgcolor: "#ffff", pb: 6 }}>
+      {/* Banner Section */}
       <Box
-        component="img"
-        src={img1}
-        alt="img1"
         sx={{
+          position: "relative",
           width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          borderRadius: 2,
-          gridColumn: "span 2", // takes 2 column width
+          height: { xs: 200, md: 300 },
+          mb: 6,
         }}
-      />
-      {/* Other smaller images */}
+      >
+        <img
+          src={bannerImg}
+          alt="Networking Banner"
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
+        <Typography
+          variant="h3"
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            color: "#f7f4f4ff",
+            fontWeight: "bold",
+            textShadow: "2px 2px 8px rgba(15, 15, 15, 0.8)",
+            textAlign: "center",
+          }}
+        >
+          CCTV CAMERAS
+        </Typography>
+      </Box>
+
+      {/* Slider Section */}
+      <Box sx={{ maxWidth: "1200px", mx: "auto", px: 2 ,bgcolor:"#fff"}}>
+        <Typography
+          variant="h4"
+          sx={{ fontWeight: "bold", mb: 3, textAlign: "center",color:"#000"}}
+        >
+          Our Products
+        </Typography>
+
+        <Swiper
+          modules={[Autoplay, Navigation]}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          navigation
+          spaceBetween={20}
+          slidesPerView={3}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            600: { slidesPerView: 2 },
+            900: { slidesPerView: 3 },
+          }}
+          style={{ padding: "20px 0" }}
+        >
+          {networkProducts.map((prod, index) => (
+            <SwiperSlide key={index}>
+              <Box
+                sx={{
+                  bgcolor: "#fff",
+                  borderRadius: 2,
+                  overflow: "hidden",
+                  boxShadow: 3,
+                  transition: "transform 0.3s",
+                  "&:hover": { transform: "scale(1.05)" },
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  p: 2,
+                }}
+              >
+                <Box
+                  component="img"
+                  src={prod.src}
+                  alt={prod.name}
+                  sx={{
+                    width: "100%",
+                    height: "200px",
+                    objectFit: "cover",
+                    borderRadius: 1,
+                  }}
+                />
+                <Typography
+                  variant="body1"
+                  fontWeight="bold"
+                  sx={{ mt: 2, mb: 1, color: "#333" }}
+                >
+                  {prod.name}
+                </Typography>
+                <Button
+                  variant="contained"
+                  sx={{
+                    bgcolor: "#5f8354ff",
+                    "&:hover": { bgcolor: "#4d6b49ff" },
+                  }}
+                >
+                  Enquiry
+                </Button>
+              </Box>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Box>
+
+      {/* About Us Section */}
       <Box
-        component="img"
-        src={img2}
-        alt="img2"
         sx={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          borderRadius: 2,
+          pt: { xs: 10, md: 14 },
+          pb: { xs: 5, md: 10 },
+          px: 2,
+          mt: 6,
+          bgcolor: "#f9fcfaff",
         }}
-      />
-      <Box
-        component="img"
-        src={img3}
-        alt="img3"
-        sx={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          borderRadius: 2,
-        }}
-      />
-      <Box
-        component="img"
-        src={img4}
-        alt="img4"
-        sx={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          borderRadius: 2,
-        }}
-      />
-      {/* Overlay Title */}
-  <Typography
-    variant="h3"
-    sx={{
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-      color: "#180303ff",
-      fontWeight: "bold",
-      textShadow: "2px 2px 8px rgba(0,0,0,0.7)",
-      textAlign: "center",
-      px: 2,
-    }}
-  >
-    Security & Surveillance
-  </Typography>
-    </Box>
-        <CustomBox sx={{mt:5}}>
-          <ImgContainer>
-            
-            <Box
+      >
+        <Container>
+          <CustomBox>
+            <ImgContainer>
+              <Box
+                component="img"
+                src={aboutimg2}
+                alt="about"
+                sx={{
+                  maxWidth: "500px",
+                  width: {
+                    xs: "250px",
+                    sm: "300px",
+                    md: "500px",
+                  },
+                  height: "auto",
+                }}
+              />
+            </ImgContainer>
+
+            <Box>
+              
+              <Typography
+                sx={{ fontSize: "18px", color: "black", lineHeight: "27px" }}
+              >
+                {isSmallScreen && !showMore ? shortText : fullText}
+              </Typography>
+
+              {isSmallScreen && (
+                <Button onClick={() => setShowMore(!showMore)} sx={{ mt: 2 }}>
+                  {showMore ? "Show Less" : "Read More"}
+                </Button>
+              )}
+            </Box>
+          </CustomBox>
+        </Container>
+      </Box>
+
+      {/* Types of Services Section */}
+      <Box sx={{ py: 8, bgcolor: "#fff" }}>
+        <Container>
+          <Typography
+            variant="h4"
+            sx={{
+              textAlign: "center",
+              mb: 5,
+              fontWeight: "bold",
+              color: "#333",
+            }}
+          >
+            Types Of Services
+          </Typography>
+
+          <Grid container spacing={4} justifyContent="center">
+            {services.map((service, index) => (
+              <Grid item xs={12} sm={6} md={3} key={index}>
+                <Card
+                  sx={{
+                    borderRadius: 2,
+                    boxShadow: 3,
+                    transition: "transform 0.3s",
+                    "&:hover": { transform: "scale(1.05)" },
+                  }}
+                >
+                  <CardMedia
                     component="img"
-                    src={servicecctvimg}
-                    alt="about"
-                    sx={{
-                    maxWidth: '600px',
-                    width: {
-                        xs: '250px',
-                        sm: '400px',
-                        md: '500px',
-                    },
-                    height: 'auto',
-                    // border:'3px solid black'
-                    }}
-                />    
-          </ImgContainer>
-
-          <Box>
-           
-
-            <Typography sx={{ fontSize: '16px', color: 'black', lineHeight: '27px' }}>
-              {isSmallScreen && !showMore ? shortText : fullText}
-            </Typography>
-
-            {isSmallScreen && (
-              <Button onClick={() => setShowMore(!showMore)} sx={{ mt: 2 }}>
-                {showMore ? "Show Less" : "Read More"}
-              </Button>
-            )}
-          </Box>
-        </CustomBox>
-      </Container>
+                    height="200"
+                    image={service.src}
+                    alt={service.name}
+                  />
+                  <CardContent>
+                    <Typography
+                      variant="subtitle1"
+                      sx={{ textAlign: "center", fontWeight: "bold" }}
+                    >
+                      {service.name}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
     </Box>
   );
 }
 
 export default Servicecctv;
+
