@@ -161,8 +161,8 @@ function Door_bio() {
       {/* Slider Section */}
       <Box sx={{ maxWidth: "1200px", mx: "auto", px: 2, bgcolor: "#fff" }}>
         <Typography
-          variant="h5"
-          sx={{ fontWeight: "bold", mb: 3, textAlign: "center" }}
+          variant="h4"
+          sx={{ fontWeight: "bold", mb: 3, textAlign: "center",color:"#080808ff" }}
         >
           Our Products
         </Typography>
@@ -179,8 +179,9 @@ function Door_bio() {
             pb: { xs: 5, md: 10 },
             px: 2,
             mt: 6,
-            bgcolor: "#cedbc9ff",
-            border:"5px solid #7d927dff"
+            mx:4,
+            bgcolor: "#e0d7daff",
+            border:"5px solid #666866ff"
           }}
         >
           <Container>

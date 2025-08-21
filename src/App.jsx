@@ -23,6 +23,8 @@ import Servicecctv from "./Pages/Servicecctv";
 import Network from "./Pages/Network"
 import Door_bio from "./Pages/Door_bio"
 import Gates from "./Pages/Gates";
+import Computers from "./Pages/Computers";
+import Porches from "./Pages/Porches";
 
 // import Product from "./Pages/Product"
 
@@ -33,7 +35,7 @@ function AppContent() {
   // Routes that show only Navbar + Footer
   const minimalLayoutRoutes = [
     "/about","/contact","/products","/servicecctv","/network","/door-bio",
-    "/gates"
+    "/gates","/porches", "/computers"
     
   ];
 
@@ -48,7 +50,9 @@ function AppContent() {
           <Route path="/servicecctv" element={<Servicecctv/>}/>
           <Route path="/network" element={<Network/>}/>
           <Route path="/door-bio" element={<Door_bio/>}/>
-          <Route path="/gates" element={<Gates/>}/>
+          <Route path="/gates" element={<Gates/>}/>/
+          <Route path="/porches" element={<Porches/>}/>/
+          <Route path="/computers" element={<Computers/>}/>/
 
         </Routes>
         <Footer />
