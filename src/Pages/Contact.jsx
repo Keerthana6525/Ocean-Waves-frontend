@@ -70,11 +70,11 @@ export default function Contact() {
       </Box>
 
           {/* Extra Contact Info Cards */}
-      <Container sx={{ mt: 8, mb: 6,backgroundColor:"#ffff" }}>
+      <Container sx={{ mt: 8, mb: 6,backgroundColor:"#fff" }}>
         <Grid container spacing={4}>
           {/* Phone Card */}
           <Grid item xs={12} md={4}>
-            <Paper elevation={3} sx={{ p: 4, textAlign: "center" ,minHeight:250, width:350}}>
+            <Paper elevation={3} sx={{ p: 4, textAlign: "center" ,minHeight:250, width:350,bgcolor:"#fff8feff"}}>
               <Phone sx={{ fontSize: 50, color: "#1976d2", mb: 2 }} />
               <Typography variant="h6" gutterBottom>
                 Give us a call
@@ -88,7 +88,7 @@ export default function Contact() {
 
           {/* Email Card */}
           <Grid item xs={12} md={4}>
-            <Paper elevation={3} sx={{ p: 4, textAlign: "center" ,minHeight:250, width:350}}>
+            <Paper elevation={3} sx={{ p: 4, textAlign: "center" ,minHeight:250, width:350,bgcolor:"#fff8feff"}}>
               <Email sx={{ fontSize: 50, color: "#ff9800", mb: 2 }} />
               <Typography variant="h6" gutterBottom>
                 Drop us a line
@@ -100,7 +100,7 @@ export default function Contact() {
 
           {/* Address Card */}
           <Grid item xs={12} md={4}>
-            <Paper elevation={3} sx={{ p: 4, textAlign: "center",minHeight:250 , width:350}}>
+            <Paper elevation={3} sx={{ p: 4, textAlign: "center",minHeight:250 , width:350,bgcolor:"#fff8feff"}}>
               <LocationOn sx={{ fontSize: 50, color: "#f44336", mb: 2 }} />
               <Typography variant="h6" gutterBottom>
                 Visit our office
@@ -121,19 +121,15 @@ export default function Contact() {
       <Container maxWidth="lg" sx={{ mt: 6, mb: 6 ,backgroundColor:"#ffff"}}>
         <Grid container spacing={8}>
           {/* Left side - Form */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} >
             <Paper
               elevation={3}
-              sx={{ p: 3, height: "100%", maxWidth: 600, margin: "0 auto" }}
+              sx={{ p: 3, height: "100%", maxWidth: 600, margin: "0 auto",boxShadow: "2px 2px 8px rgba(24, 27, 25, 0.8)",bgcolor:"#b0c4b0ff"}}
             >
-              <Typography variant="h5" gutterBottom>
-                Have queries, doubts or suggestions?
+              <Typography variant="h3" gutterBottom textAlign={"center"} sx={{fontWeight:"bold"}}>
+                WRITE TO US
               </Typography>
-              <Typography variant="h6" gutterBottom sx={{ mb: 2 }}>
-                Raise an entry by filling out the form below, and we'll be more
-                than happy to help.
-              </Typography>
-
+              
               <Box
                 component="form"
                 onSubmit={handleSubmit}
@@ -225,7 +221,7 @@ export default function Contact() {
                   <Button
                     type="submit"
                     variant="contained"
-                    sx={{ mt: 3, backgroundColor: "#4A6B4A" }}
+                    sx={{ mt: 5, backgroundColor: "#0a0a0aff" }}
                   >
                     Submit
                   </Button>

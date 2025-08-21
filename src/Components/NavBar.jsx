@@ -19,10 +19,16 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useTheme } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";  //  import navigate hook
 import logo from "../assets/ocean-waves.png";
+import { Collapse } from "@mui/material";
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import ExpandMore from "@mui/icons-material/ExpandMore";
+
 
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [openServices, setOpenServices] = useState(false);
+
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
@@ -103,14 +109,14 @@ export default function NavBar() {
               ml: "auto",
             }}
           >
-            <Button sx={{ color: "white", fontSize:{sm:'10px',md:'20px'}, fontFamily: "Arial" }} onClick={() => navigate("/")}>
+            <Button sx={{ color: "white", fontSize:{sm:'10px',md:'18px'}, fontFamily: "Arial" }} onClick={() => navigate("/")}>
               HOME
             </Button>
-            <Button sx={{ color: "white", fontSize:{sm:'10px',md:'20px'}, fontFamily: "Arial" }} onClick={() => navigate("/about")}>
+            <Button sx={{ color: "white", fontSize:{sm:'10px',md:'18px'}, fontFamily: "Arial" }} onClick={() => navigate("/about")}>
               ABOUT US
             </Button>
             <Button
-              sx={{ color: "white", fontSize: {sm:'10px',md:'20px'}, fontFamily: "Arial" }}
+              sx={{ color: "white", fontSize: {sm:'10px',md:'18px'}, fontFamily: "Arial" }}
               onClick={handleOpenMenu}
               endIcon={<ArrowDropDownIcon />}
             >
@@ -123,10 +129,10 @@ export default function NavBar() {
                 </MenuItem>
               ))}
             </Menu>
-            <Button sx={{ color: "white", fontSize: {sm:'10px',md:'20px'}, fontFamily: "Arial" }} onClick={() => navigate("/products")}>
+            <Button sx={{ color: "white", fontSize: {sm:'10px',md:'18px'}, fontFamily: "Arial" }} onClick={() => navigate("/products")}>
               PRODUCTS
             </Button>
-            <Button sx={{ color: "white", fontSize: {sm:'10px',md:'20px'}, fontFamily: "Arial" }} onClick={() => navigate("/contact")}>
+            <Button sx={{ color: "white", fontSize: {sm:'10px',md:'18px'}, fontFamily: "Arial" }} onClick={() => navigate("/contact")}>
               CONTACT
             </Button>
           </Box>
@@ -144,14 +150,24 @@ export default function NavBar() {
                   {menuItems.map((item, index) =>
                     item.subItems ? (
                       <React.Fragment key={index}>
-                        <ListItem>
+                        <ListItem button onClick={() => setOpenServices(!openServices)}>
                           <ListItemText primary={item.text} />
+                          {openServices ? <ExpandLess /> : <ExpandMore />}
                         </ListItem>
-                        {item.subItems.map((sub, i) => (
-                          <ListItem button key={i} onClick={() => navigate(sub.link)}>
-                            <ListItemText primary={`- ${sub.text}`} />
-                          </ListItem>
-                        ))}
+                        <Collapse in={openServices} timeout="auto" unmountOnExit>
+                          <List component="div" disablePadding>
+                            {item.subItems.map((sub, i) => (
+                              <ListItem
+                                button
+                                key={i}
+                                sx={{ pl: 4 }}
+                                onClick={() => navigate(sub.link)}
+                              >
+                                <ListItemText primary={sub.text} />
+                              </ListItem>
+                            ))}
+                          </List>
+                        </Collapse>
                       </React.Fragment>
                     ) : (
                       <ListItem button key={index} onClick={() => navigate(item.link)}>

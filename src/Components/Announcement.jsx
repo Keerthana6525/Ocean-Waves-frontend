@@ -2,10 +2,16 @@ import React, { useEffect, useState } from "react";
 import { Box, Typography, Fade } from "@mui/material";
 
 const announcements = [
-  "The Graduation Ceremony for Undergraduate",
-  "Admissions 2025-2026 Provisional Rank List Published",
-  "Library will remain closed on public holidays",
-  "Upcoming Webinar on Research Methodologies"
+  "Now offering AI-powered CCTV Surveillance Solutions",
+  "Special Discounts on Biometric Access Control Systems -Limited Time Offer",
+  "24/7 Remote Monitoring Service Now Available for Businesses",
+  "New Product Launch: Smart Sliding Gate Motors with Safety Sensors",
+  "Annual Maintenance Contracts Available -Book Yours Today",
+  "We are ISO Certified - Ensuring Quality and Reliability in Every Service",
+  "Introducing Cloud-Based Video Storage Solutions for Enterprises",
+  "Upgraded Intrusion Alarm Systems with Mobile Alerts",
+  "Smart Home Security Packages - Secure Your Home with the Latest Technology",
+  "Our Technical Support Hotline is Now Available 24/7 for All Clients"
 ];
 
 const AnnouncementBar = () => {

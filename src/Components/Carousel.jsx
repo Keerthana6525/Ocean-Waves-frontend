@@ -16,7 +16,7 @@ const images = [
   {
     src: cctvImg,
     title: "PROVIDING THE BEST CCTV SECURITY",
-    style: { color: "black", top: "20%", left: "5%", textAlign: "left" },
+    style: { color: "black", top: "20%", left: "5%", textAlign: "left",textShadow: "2px 2px 8px rgba(248, 245, 245, 0.8)" },
   },
   {
     src: networkImg,
@@ -27,7 +27,8 @@ const images = [
       left: "50%",
       transform: "translate(-50%, -50%)",
       textAlign: "center",
-      opacity: "0.9",
+      // opacity: "0.9",
+      textShadow: "2px 2px 8px rgba(15, 15, 15, 0.8)"
     },
   },
   {
@@ -39,17 +40,18 @@ const images = [
       left: "50%",
       transform: "translate(-50%, -50%)",
       textAlign: "center",
+      textShadow: "2px 2px 8px rgba(248, 245, 245, 0.8)"
     },
   },
   {
     src: doorImg,
     title: "ENHANCING SECURITY AND EFFICIENCY",
-    style: { color: "black", top: "20%", right: "8%", textAlign: "right" },
+    style: { color: "black", top: "50%", left: "50%",transform: "translate(-50%, -50%)", textAlign: "right",textShadow: "2px 2px 8px rgba(248, 245, 245, 0.8)" },
   },
   {
     src: porchImg,
     title: "GRACEFUL ENTRANCES, SECURE SPACES",
-    style: { color: "black", top: "30%", left: "10%", textAlign: "center" },
+    style: { color: "black", top: "50%", left: "50%",transform: "translate(-50%, -50%)", textAlign: "center",textShadow: "2px 2px 8px rgba(248, 245, 245, 0.8)" },
   },
   {
     src: officeImg,
@@ -60,6 +62,7 @@ const images = [
       left: "50%",
       transform: "translate(-50%, -50%)",
       textAlign: "center",
+      textShadow: "2px 2px 8px rgba(248, 245, 245, 0.8)"
     },
   },
 ];
