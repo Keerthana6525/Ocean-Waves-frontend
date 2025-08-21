@@ -114,6 +114,7 @@ function Network() {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
+            fontSize:{xs:20,sm:35,md:40},
             color: "#fff",
             fontWeight: "bold",
             textShadow: "2px 2px 8px rgba(0,0,0,0.8)",

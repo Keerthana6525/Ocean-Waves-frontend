@@ -171,7 +171,7 @@ function Gates() {
             textAlign: "center",
           }}
         >
-          DOOR ACCESS & BIOMETRIC TIME ATTENDANCE
+          SWING & SLIDING GATES
         </Typography>
       </Box>
 

@@ -222,7 +222,7 @@ const networkProducts = [
   { src: img3 },
   { src: img4 },
   { src: img5 },
-    { src: img6 },
+  { src: img6 },
 
 ];
 

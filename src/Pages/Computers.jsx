@@ -139,6 +139,7 @@ function Computers() {
             left: "50%",
             transform: "translate(-50%, -50%)",
             color: "#141414ff",
+            fontSize:{xs:20,sm:35,md:40},
             fontWeight: "bold",
             textShadow: "2px 2px 8px rgba(247, 241, 241, 0.8)",
             textAlign: "center",
