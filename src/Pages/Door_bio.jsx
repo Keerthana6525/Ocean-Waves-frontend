@@ -112,6 +112,7 @@ function Door_bio() {
     [theme.breakpoints.down("md")]: {
       flexDirection: "column",
       textAlign: "center",
+      gap:theme.spacing(3)
     },
   }));
 
@@ -175,10 +176,10 @@ function Door_bio() {
         <Box
           key={index}
           sx={{
-            pt: { xs: 10, md: 14 },
-            pb: { xs: 5, md: 10 },
-            px: 2,
-            mt: 6,
+            pt: { xs: 4, md: 14 },
+            pb: { xs: 2, md: 10 },
+            px: {xs:1,sm:2,md:4},
+            mt: 3,
             mx:4,
             bgcolor: "#e0d7daff",
             border:"5px solid #666866ff"
@@ -203,7 +204,7 @@ function Door_bio() {
               <Box>
                 <Typography
                   sx={{
-                    fontSize: "35px",
+                    fontSize: {xs:20,sm:25,md:35},
                     color: "black",
                     fontWeight: "700",
                     my: 3,
@@ -289,6 +290,11 @@ function Door_bio() {
                     bgcolor: "#5f8354ff",
                     "&:hover": { bgcolor: "#4d6b49ff" },
                   }}
+                  fullWidth
+                  component="a"
+                  href={`https://wa.me/7150580529?text=Hi, I'm intrested in ${prod.name}`}
+                  target="_blank"
+                  rel="noopener norefferrer"
                 >
                   Enquiry
                 </Button>
@@ -298,7 +304,7 @@ function Door_bio() {
         </Swiper>
 
       {/* Types of Services Section */}
-      <Box sx={{ py: 8, bgcolor: "#fff" }}>
+      <Box sx={{ py: {xs:2,sm:4,md:8}, bgcolor: "#fff" }}>
         <Container>
           <Typography
             variant="h4"

@@ -15,6 +15,7 @@ const About = () => {
     [theme.breakpoints.down("md")]: {
       flexDirection: 'column',
       textAlign: 'center',
+      gap: theme.spacing(3),
     },
   }));
 
@@ -43,7 +44,7 @@ const About = () => {
    the capital of United Arab Emirates...`;
 
   return (
-    <Box sx={{ pt: { xs: 8, md: 16 }, pb: {xs:5,md:10}, px: 2 ,bgcolor: "#fff"}}>
+    <Box sx={{ pt: { xs: 8, md: 16 }, pb: {xs:1.5,sm:3,md:10}, px: 2 ,bgcolor: "#fff"}}>
       <Container>
         <CustomBox>
           <ImgContainer>
@@ -55,8 +56,8 @@ const About = () => {
                     sx={{
                     maxWidth: '500px',
                     width: {
-                        xs: '250px',
-                        sm: '300px',
+                        xs: '290px',
+                        sm: '320px',
                         md: '500px',
                     },
                     height: 'auto',
@@ -65,8 +66,8 @@ const About = () => {
                 />    
           </ImgContainer>
 
-          <Box  sx={{my: {xs:0.3,sx:0.8,md:2}}}>
-            <Typography sx={{ fontSize: '35px', color: 'black', fontWeight: '700', my: {xs:0.2,sx:0.8,md:2} }}>
+          <Box  sx={{my: {xs:0,sx:0.8,md:2}}}>
+            <Typography sx={{ fontSize: {xs:"30px",md:'35px'}, color: 'black', fontWeight: '700', my: {xs:1,md:2} }}>
               OCEAN WAVES SECURITY SYSTEM L.L.C.
             </Typography>
 

@@ -248,6 +248,7 @@ function Servicecctv() {
     [theme.breakpoints.down("md")]: {
       flexDirection: "column",
       textAlign: "center",
+      gap:theme.spacing(1)
     },
   }));
 
@@ -305,8 +306,8 @@ function Servicecctv() {
       {/* Slider Section */}
       <Box sx={{ maxWidth: "1200px", mx: "auto", px: 2 ,bgcolor:"#fff"}}>
         <Typography
-          variant="h4"
-          sx={{ fontWeight: "bold", mb: 3, textAlign: "center",color:"#000"}}
+          
+          sx={{fontSize:{xs:25,sm:35,md:45},fontWeight: "bold", mb: {xs:0,sm:1,md:3}, textAlign: "center",color:"#000"}}
         >
           Our Products
         </Typography>
@@ -359,15 +360,22 @@ function Servicecctv() {
                 >
                   {prod.name}
                 </Typography>
-                <Button
-                  variant="contained"
-                  sx={{
-                    bgcolor: "#5f8354ff",
-                    "&:hover": { bgcolor: "#4d6b49ff" },
-                  }}
-                >
-                  Enquiry
-                </Button>
+                   {/* Enquiry Button */}
+                      <Button
+                          variant="contained"
+                            sx={{
+                                mt: 2,
+                                bgcolor: "#4A6B4A",
+                                "&:hover": { bgcolor: "#278127ff" },
+                                 }}
+                           fullWidth
+                           component="a"
+                          href={`https://wa.me/7150580529?text=Hi, I'm intrested in ${prod.name}`}
+                          target="_blank"
+                          rel="noopener norefferrer"
+                       >
+                        Enquiry
+                      </Button>
               </Box>
             </SwiperSlide>
           ))}
@@ -377,10 +385,10 @@ function Servicecctv() {
       {/* About Us Section */}
       <Box
         sx={{
-          pt: { xs: 10, md: 14 },
-          pb: { xs: 5, md: 10 },
-          px: 2,
-          mt: 6,
+          pt: { xs: 4, md: 14 },
+          pb: { xs: 2, md: 10 },
+          px: {xs:1,sm:2,md:4},
+          mt: 3,
           bgcolor: "#f9fcfaff",
         }}
       >
@@ -422,7 +430,7 @@ function Servicecctv() {
       </Box>
 
       {/* Types of Services Section */}
-      <Box sx={{ py: 8, bgcolor: "#fff" }}>
+      <Box sx={{ py: {xs:2,sm:4,md:8}, bgcolor: "#fff" }}>
         <Container>
           <Typography
             variant="h4"
@@ -432,7 +440,7 @@ function Servicecctv() {
               fontWeight: "bold",
               color: "#333",
             }}
-          >
+            >
             Types Of Services
           </Typography>
 

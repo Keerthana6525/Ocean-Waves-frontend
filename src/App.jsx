@@ -4,6 +4,7 @@
 import { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import ScrollToTop from "./Components/ScrollToTop";
 import NavBar from "./Components/NavBar";
 import Carousel from "./Components/Carousel";
 import AnnouncementBar from "./Components/Announcement";
@@ -81,6 +82,7 @@ function AppContent() {
 function App() {
   return (
     <Router>
+      <ScrollToTop/>
       <Routes>
         <Route path="/*" element={<AppContent />} />
       </Routes>

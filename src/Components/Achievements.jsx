@@ -38,11 +38,11 @@ function Achievements() {
 
             <Box
         sx={{
-          bgcolor: "#fff",
+          bgcolor: "#f8f7f7ff",
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",
-          gap: { xs: 2, sm: 4, md: 6, lg: 8 },
+          gap: { sm: 4, md: 6, lg: 10 },
           px: 2,
           py: 4,
         

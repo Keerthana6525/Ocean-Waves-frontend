@@ -95,6 +95,7 @@ function Computers() {
     [theme.breakpoints.down("md")]: {
       flexDirection: "column",
       textAlign: "center",
+      gap: theme.spacing(5),
     },
   }));
 
@@ -212,6 +213,11 @@ function Computers() {
                     bgcolor: "#5f8354ff",
                     "&:hover": { bgcolor: "#4d6b49ff" },
                   }}
+                  fullWidth
+                           component="a"
+                          href={`https://wa.me/7150580529?text=Hi, I'm intrested in ${prod.name}`}
+                          target="_blank"
+                          rel="noopener norefferrer"
                 >
                   Enquiry
                 </Button>
@@ -224,10 +230,10 @@ function Computers() {
       {/* About Us Section */}
       <Box
         sx={{
-          pt: { xs: 10, md: 14 },
-          pb: { xs: 5, md: 10 },
-          px: 2,
-          mt: 6,
+          pt: { xs: 5, md: 14 },
+          pb: { xs: 1, md: 10 },
+          px: {xs:1, sm:2, md:4},
+          mt: 3,
           bgcolor: "#f9fcfaff",
         }}
       >

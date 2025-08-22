@@ -39,11 +39,10 @@ function Products() {
     <Box sx={{ bgcolor: "#f5f5f5", py: 4 }}>
       <Container maxWidth="lg">
         <Typography
-          variant="h3"
           fontWeight="bold"
           color="#000"
           gutterBottom
-          sx={{ textAlign:"center" }}
+          sx={{ textAlign:"center",fontSize:{xs:25,sm:3,md:40} }}
         >
           PRODUCTS
         </Typography>

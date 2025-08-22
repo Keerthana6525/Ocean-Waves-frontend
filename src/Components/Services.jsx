@@ -43,16 +43,16 @@ const images = [
 
 function Services() {
   return (
-    <Box sx={{ py: 10, px: 2,backgroundColor:'#f1f6f3ff' }}>
+    <Box sx={{ py: 1, px: 2,backgroundColor:'#f1f6f3ff' }}>
       {/* Section Header */}
       <Typography
-        variant="h3"
+        // variant="h3"
         align="center"
         fontWeight="bold"
         color='#000'
         padding={3}
         // gutterBottom
-        sx={{ fontSize: { xs: 28, sm: 36, md: 48 } }}
+        sx={{ fontSize: { xs: 30, sm: 36, md: 48 } }}
       >
         SERVICES
       </Typography>
@@ -74,6 +74,7 @@ function Services() {
                 cursor: 'pointer',
                 '&:hover .image': { opacity: 0.3, transform: 'scale(1.05)' },
                 '&:hover .hoverOverlay': { opacity: 1, transform: 'translateY(0)' },
+                "&:hover .titleBox" : {opacity:0},
               }}
             >
               {/* Image */}
@@ -90,6 +91,26 @@ function Services() {
                   transition: 'all 0.5s ease',
                 }}
               />
+
+                  {/* Always Visible Title */}
+              <Box
+                className="titleBox"
+                sx={{
+                  position: 'absolute',
+                  bottom: 0,
+                  left: 0,
+                  width: '100%',
+                  bgcolor: 'rgba(0,0,0,0.6)',
+                  color: '#fff',
+                  textAlign: 'center',
+                  py: 4,
+                  transition: "opacity 0.3s ease"
+                }}
+              >
+                <Typography  sx={{fontSize:{xs:15,sm:28,md:32}, fontWeight: 600 }}>
+                  {item.title}
+                </Typography>
+              </Box>
 
               {/* Hover Overlay with Title + Description */}
               <Box
@@ -109,11 +130,11 @@ function Services() {
                   opacity: 0,
                   transform: 'translateY(20%)',
                   transition: 'all 0.5s ease',
-
+                  px:2
                 }}
               >
                 <Typography
-                  variant="h4"
+                  variant="h5"
                   sx={{
                     fontWeight: 700,
                     mb: 2,

@@ -70,6 +70,7 @@ function Network() {
     [theme.breakpoints.down("md")]: {
       flexDirection: "column",
       textAlign: "center",
+      gap:theme.spacing(1)
     },
   }));
 
@@ -128,8 +129,8 @@ function Network() {
       {/* Slider Section */}
       <Box sx={{ maxWidth: "1200px", mx: "auto", px: 2 ,bgcolor:"#fff"}}>
         <Typography
-          variant="h5"
-          sx={{ fontWeight: "bold", mb: 3, textAlign: "center",color:"#000"}}
+          
+          sx={{ fontSize:{xs:25,sm:35,md:45},fontWeight: "bold", mb: 3, textAlign: "center",color:"#000"}}
         >
           Our Network Products
         </Typography>
@@ -185,9 +186,15 @@ function Network() {
                 <Button
                   variant="contained"
                   sx={{
-                    bgcolor: "#5f8354ff",
-                    "&:hover": { bgcolor: "#4d6b49ff" },
-                  }}
+                        mt: 2,
+                        bgcolor: "#4A6B4A",
+                        "&:hover": { bgcolor: "#278127ff" },
+                        }}
+                           fullWidth
+                           component="a"
+                          href={`https://wa.me/7150580529?text=Hi, I'm intrested in ${prod.name}`}
+                          target="_blank"
+                          rel="noopener norefferrer"
                 >
                   Enquiry
                 </Button>
@@ -200,10 +207,10 @@ function Network() {
       {/* About Us Section */}
       <Box
         sx={{
-          pt: { xs: 10, md: 14 },
-          pb: { xs: 5, md: 10 },
-          px: 2,
-          mt: 6,
+          pt: { xs: 4, md: 14 },
+          pb: { xs: 2, md: 10 },
+          px: {xs:1,sm:2,md:4},
+          mt: 3,
           bgcolor: "#f9fcfaff",
         }}
       >
@@ -245,7 +252,7 @@ function Network() {
       </Box>
 
       {/* Types of Services Section */}
-      <Box sx={{ py: 8, bgcolor: "#fff" }}>
+      <Box sx={{ py: {xs:2,sm:4,md:8}, bgcolor: "#fff" }}>
         <Container>
           <Typography
             variant="h4"

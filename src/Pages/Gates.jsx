@@ -128,6 +128,7 @@ function Gates() {
     [theme.breakpoints.down("md")]: {
       flexDirection: "column",
       textAlign: "center",
+      gap:theme.spacing(3)
     },
   }));
 
@@ -178,8 +179,8 @@ function Gates() {
       {/* Slider Section */}
       <Box sx={{ maxWidth: "1200px", mx: "auto", px: 2, bgcolor: "#fff" }}>
         <Typography
-          variant="h4"
-          sx={{ fontWeight: "bold", mb: 3, textAlign: "center",color:"#000" }}
+          
+          sx={{ fontSize:{xs:25,sm:35,md:45},fontWeight: "bold", mb: 3, textAlign: "center",color:"#000" }}
         >
           Our Products
         </Typography>
@@ -192,9 +193,9 @@ function Gates() {
         <Box
           key={index}
           sx={{
-            pt: { xs: 8, md: 10 },
-            pb: { xs: 5, md: 10 },
-            px: 2,
+            pt: { xs: 4, md: 10 },
+            pb: { xs: 2, md: 10 },
+            px: {xs:1,sm:2,md:4},
             mx:{xs:0,md:8},
             mt: 6,
             minHeight: { xs: "auto", md: "400px" },

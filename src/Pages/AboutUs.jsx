@@ -15,6 +15,7 @@ const AboutUs = () => {
     [theme.breakpoints.down("md")]: {
       flexDirection: 'column',
       textAlign: 'center',
+      gap:theme.spacing(3),
     },
   }));
 

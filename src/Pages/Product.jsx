@@ -144,7 +144,7 @@ function Products() {
 
         {/* CCTV Section */}
         <Box sx={{ p: { xs: 2, sm: 3, md: 7 }, boxShadow: 5, backgroundColor: "#fff", mb: 4 }}>
-          <Typography fontWeight={"bold"} variant="h4" mb={2} textAlign={"center"}>
+          <Typography fontWeight={"bold"} sx={{mb:{xs:1,sm:2} ,textAlign:"center",fontSize:{xs:15,sm:25,md:35}}}>
             CCTV SYSTEM
           </Typography>
           <ProductCarousel items={products} />
@@ -152,7 +152,7 @@ function Products() {
 
         {/* Office Section */}
         <Box sx={{ p: { xs: 2, sm: 3, md: 7 }, boxShadow: 5, backgroundColor: "#fff", mb: 4 }}>
-          <Typography fontWeight={"bold"} variant="h4" mb={2} textAlign={"center"}>
+          <Typography fontWeight={"bold"} sx={{mb:{xs:1,sm:2},textAlign:"center",fontSize:{xs:15,sm:25,md:35}}}>
             OFFICE EQUIPMENTS & COMPUTERS
           </Typography>
           <ProductCarousel items={offics} />
@@ -160,7 +160,7 @@ function Products() {
 
         {/* Network Section */}
         <Box sx={{ p: { xs: 2, sm: 3, md: 7 }, boxShadow: 5, backgroundColor: "#fff" }}>
-          <Typography fontWeight={"bold"} variant="h4" mb={2} textAlign={"center"}>
+          <Typography fontWeight={"bold"} sx={{mb:{xs:1,sm:2},textAlign:"center",fontSize:{xs:15,sm:25,md:35}}}>
             NETWORK SOLUTIONS
           </Typography>
           <ProductCarousel items={network} />
@@ -168,7 +168,7 @@ function Products() {
 
         {/* Door Section */}
         <Box sx={{ p: { xs: 2, sm: 3, md: 7 }, boxShadow: 5, backgroundColor: "#fff" }}>
-          <Typography fontWeight={"bold"} variant="h4" mb={2} textAlign={"center"}>
+          <Typography fontWeight={"bold"} sx={{mb:{xs:1,sm:2} ,textAlign:"center",fontSize:{xs:15,sm:25,md:35}}}>
             DOOR ACCESS & BIOMETRIC ATTENDANCE REGISTER
           </Typography>
           <ProductCarousel items={door} />
@@ -181,6 +181,7 @@ function Products() {
 /* ---------------- REUSABLE CAROUSEL COMPONENT ---------------- */
 function ProductCarousel({ items }) {
   return (
+    <Box sx={{px:0}}>
     <Swiper
       modules={[Autoplay]}
       autoplay={{ delay: 2000, disableOnInteraction: false }}
@@ -193,7 +194,7 @@ function ProductCarousel({ items }) {
         600: { slidesPerView: 2, slidesPerGroup: 1 },
         900: { slidesPerView: 3, slidesPerGroup: 1 },
       }}
-      style={{ padding: "20px 0" }}
+      style={{ padding: "10px 0" }}
     >
       {items.map((item, index) => (
         <SwiperSlide key={index}>
@@ -245,6 +246,10 @@ function ProductCarousel({ items }) {
                 "&:hover": { bgcolor: "#278127ff" },
               }}
               fullWidth
+              component="a"
+              href={`https://wa.me/7150580529?text=Hi, I'm intrested in ${item.name}`}
+              target="_blank"
+              rel="noopener norefferrer"
             >
               Enquiry
             </Button>
@@ -252,6 +257,7 @@ function ProductCarousel({ items }) {
         </SwiperSlide>
       ))}
     </Swiper>
+    </Box>
   );
 }
 

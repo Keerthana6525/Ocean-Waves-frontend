@@ -63,7 +63,8 @@ function Brands() {
           fontWeight="bold"
           color="#000"
           gutterBottom
-          sx={{ textAlign:"center" }}
+          sx={{ textAlign:"center",fontSize:{xs:25,sm:3,md:40} }}
+        
         >
           OUR BRANDS
         </Typography>

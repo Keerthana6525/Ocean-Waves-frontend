@@ -77,7 +77,7 @@ export default function NavBar() {
               variant="body1"
               sx={{
                 fontFamily: "'Inter', sans-serif",
-                fontSize: { xs: "20px", sm: "22px", md: "25px",lg:'33px' },
+                fontSize: { xs: "10px", sm: "16px", md: "22px",lg:'33px' },
                 color: "white",
                 textAlign: "start",
               }}
@@ -88,7 +88,7 @@ export default function NavBar() {
               variant="body1"
               sx={{
                 fontFamily: "'Inter',sans-serif",
-                fontSize: { xs: "14px", sm: "16px", md: "18px",lg:'25px' },
+                fontSize: { xs: "8px", sm: "13px", md: "16px",lg:'24px' },
                 color: "white",
                 textAlign: "start",
               }}
@@ -145,39 +145,65 @@ export default function NavBar() {
               <MenuIcon />
             </IconButton>
             <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
-              <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
-                <List>
-                  {menuItems.map((item, index) =>
-                    item.subItems ? (
-                      <React.Fragment key={index}>
-                        <ListItem button onClick={() => setOpenServices(!openServices)}>
-                          <ListItemText primary={item.text} />
-                          {openServices ? <ExpandLess /> : <ExpandMore />}
-                        </ListItem>
-                        <Collapse in={openServices} timeout="auto" unmountOnExit>
-                          <List component="div" disablePadding>
-                            {item.subItems.map((sub, i) => (
-                              <ListItem
-                                button
-                                key={i}
-                                sx={{ pl: 4 }}
-                                onClick={() => navigate(sub.link)}
-                              >
-                                <ListItemText primary={sub.text} />
-                              </ListItem>
-                            ))}
-                          </List>
-                        </Collapse>
-                      </React.Fragment>
-                    ) : (
-                      <ListItem button key={index} onClick={() => navigate(item.link)}>
-                        <ListItemText primary={item.text} />
-                      </ListItem>
-                    )
-                  )}
-                </List>
-              </Box>
-            </Drawer>
+  <Box sx={{ width: 250 }} role="presentation">
+    <List>
+      {menuItems.map((item, index) =>
+        item.subItems ? (
+          <React.Fragment key={index}>
+            <ListItem button onClick={() => setOpenServices(!openServices)}
+                sx={{
+                "&:hover": {
+                  backgroundColor: "#787a7aff",
+                },
+              }}
+              >
+              <ListItemText primary={item.text} />
+              {openServices ? <ExpandLess /> : <ExpandMore />}
+            </ListItem>
+            <Collapse in={openServices} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                {item.subItems.map((sub, i) => (
+                  <ListItem
+                    button
+                    key={i}
+                    sx={{ pl: 4,
+                        "&:hover": {
+                        backgroundColor: "#dae4daff", 
+                      },
+                     }}
+                    onClick={() => {
+                      navigate(sub.link);
+                      setDrawerOpen(false); 
+                    }}
+                  >
+                    <ListItemText primary={sub.text} />
+                  </ListItem>
+                ))}
+              </List>
+            </Collapse>
+          </React.Fragment>
+        ) : (
+          <ListItem
+            button
+            key={index}
+            sx={{
+              "&:hover": {
+                backgroundColor: "#d9dedfff", 
+              },
+            }}
+            onClick={() => {
+              navigate(item.link);
+              setDrawerOpen(false); 
+            }}
+          >
+            <ListItemText primary={item.text} />
+          </ListItem>
+        )
+      )}
+    </List>
+  </Box>
+</Drawer>
+
           </>
         )}
       </Toolbar>

@@ -54,13 +54,13 @@ export default function Contact() {
         />
         {/* Overlay Text */}
         <Typography
-          variant="h2"
           sx={{
             position: "absolute",
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
             color: "#000",
+            fontSize:{xs:30,sm:38,md:50},
             fontWeight: "bold",
             textShadow: "2px 2px 8px rgba(0,0,0,0.7)",
           }}
@@ -70,11 +70,11 @@ export default function Contact() {
       </Box>
 
           {/* Extra Contact Info Cards */}
-      <Container sx={{ mt: 8, mb: 6,backgroundColor:"#fff" }}>
-        <Grid container spacing={4}>
+      <Container  sx={{ mt: 8, mb: 6,backgroundColor:"#fff" }}>
+        <Grid container spacing={4} sx={{display:"flex", justifyContent:"center"}}>
           {/* Phone Card */}
-          <Grid item xs={12} md={4}>
-            <Paper elevation={3} sx={{ p: 4, textAlign: "center" ,minHeight:250, width:350,bgcolor:"#fff8feff"}}>
+          <Grid item xs={12} md={4} sx={{display:"flex", justifyContent:"center"}}>
+            <Paper elevation={3} sx={{ p: 4, textAlign: "center" ,minHeight:250, width:320,bgcolor:"#fff8feff"}}>
               <Phone sx={{ fontSize: 50, color: "#1976d2", mb: 2 }} />
               <Typography variant="h6" gutterBottom>
                 Give us a call
@@ -88,7 +88,7 @@ export default function Contact() {
 
           {/* Email Card */}
           <Grid item xs={12} md={4}>
-            <Paper elevation={3} sx={{ p: 4, textAlign: "center" ,minHeight:250, width:350,bgcolor:"#fff8feff"}}>
+            <Paper elevation={3} sx={{ p: 4, textAlign: "center" ,minHeight:250, width:320,bgcolor:"#fff8feff"}}>
               <Email sx={{ fontSize: 50, color: "#ff9800", mb: 2 }} />
               <Typography variant="h6" gutterBottom>
                 Drop us a line
@@ -100,7 +100,7 @@ export default function Contact() {
 
           {/* Address Card */}
           <Grid item xs={12} md={4}>
-            <Paper elevation={3} sx={{ p: 4, textAlign: "center",minHeight:250 , width:350,bgcolor:"#fff8feff"}}>
+            <Paper elevation={3} sx={{ p: 4, textAlign: "center",minHeight:250 , width:320,bgcolor:"#fff8feff"}}>
               <LocationOn sx={{ fontSize: 50, color: "#f44336", mb: 2 }} />
               <Typography variant="h6" gutterBottom>
                 Visit our office
@@ -119,14 +119,14 @@ export default function Contact() {
 
       {/* Form & Contact Details */}
       <Container maxWidth="lg" sx={{ mt: 6, mb: 6 ,backgroundColor:"#ffff"}}>
-        <Grid container spacing={8}>
+        <Grid container spacing={8} sx={{display:"flex", justifyContent:"center"}}>
           {/* Left side - Form */}
           <Grid item xs={12} md={6} >
             <Paper
               elevation={3}
               sx={{ p: 3, height: "100%", maxWidth: 600, margin: "0 auto",boxShadow: "2px 2px 8px rgba(24, 27, 25, 0.8)",bgcolor:"#c6dac6ff"}}
             >
-              <Typography variant="h3" gutterBottom textAlign={"center"} sx={{fontWeight:"bold"}}>
+              <Typography  gutterBottom textAlign={"center"} sx={{fontWeight:"bold",fontSize:{xs:20,sm:25,md:30}}}>
                 WRITE TO US
               </Typography>
               
@@ -167,12 +167,12 @@ export default function Contact() {
                       required
                     />
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid item xs={12} sm={4}>
                     <TextField
                       label="Query"
                       name="query"
-                      multiline
-                      rows={3}
+                      // multiline
+                      // rows={3}
                       value={formData.query}
                       onChange={handleChange}
                       fullWidth
@@ -231,7 +231,7 @@ export default function Contact() {
           </Grid>
 
           {/* Right side - Contact Details */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} >
             <Paper elevation={3} sx={{ p: 3, height: "100%" }}>
 
               {/* Google Map Embed */}

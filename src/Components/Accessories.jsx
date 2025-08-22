@@ -43,7 +43,8 @@ function Accessories() {
           fontWeight="bold"
           color="#000"
           gutterBottom
-          sx={{ textAlign: "center"}}
+          sx={{ textAlign: "center" ,fontSize:{xs:25,sm:30,md:40} }}
+        
         >
           ACCESSORIES
         </Typography>
@@ -107,19 +108,22 @@ function Accessories() {
                 >
                   {access.name}
                 </Typography>
-
-                {/* Enquiry Button */}
-                <Button
-                  variant="contained"
-                  sx={{
-                    mt: 2,
-                    bgcolor: "#4A6B4A",
-                    "&:hover": { bgcolor: "#278127ff" },
-                  }}
-                  fullWidth
-                >
-                  Enquiry
-                </Button>
+                    {/* Enquiry Button */}
+                                <Button
+                                  variant="contained"
+                                  sx={{
+                                    mt: 2,
+                                    bgcolor: "#4A6B4A",
+                                    "&:hover": { bgcolor: "#278127ff" },
+                                  }}
+                                  fullWidth
+                                  component="a"
+                                  href={`https://wa.me/7150580529?text=Hi, I'm intrested in ${access.name}`}
+                                  target="_blank"
+                                  rel="noopener norefferrer"
+                                >
+                                  Enquiry
+                                </Button>
               </Box>
             </SwiperSlide>
           ))}
