@@ -117,6 +117,10 @@ function Products() {
                     "&:hover": { bgcolor: "#278127ff" },
                   }}
                   fullWidth
+                  component="a"
+                  href={`https://wa.me/7150580529?text=Hi, I'm intrested in ${prod.name}`}
+                  target="_blank"
+                  rel="noopener norefferrer"
                 >
                   Enquiry
                 </Button>

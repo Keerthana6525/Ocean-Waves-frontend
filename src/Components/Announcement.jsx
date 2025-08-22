@@ -3,15 +3,15 @@ import { Box, Typography, Fade } from "@mui/material";
 
 const announcements = [
   "Now offering AI-powered CCTV Surveillance Solutions",
-  "Special Discounts on Biometric Access Control Systems -Limited Time Offer",
+  "Special Discounts on Biometric Access Control Systems",
   "24/7 Remote Monitoring Service Now Available for Businesses",
   "New Product Launch: Smart Sliding Gate Motors with Safety Sensors",
   "Annual Maintenance Contracts Available -Book Yours Today",
-  "We are ISO Certified - Ensuring Quality and Reliability in Every Service",
+  "ISO Certified - Ensuring Quality and Reliability in Every Service",
   "Introducing Cloud-Based Video Storage Solutions for Enterprises",
   "Upgraded Intrusion Alarm Systems with Mobile Alerts",
-  "Smart Home Security Packages - Secure Your Home with the Latest Technology",
-  "Our Technical Support Hotline is Now Available 24/7 for All Clients"
+  "Smart Home Security Packages",
+  "Our Technical Support Hotline is Now Available 24/7 "
 ];
 
 const AnnouncementBar = () => {
@@ -49,7 +49,7 @@ const AnnouncementBar = () => {
           py: { xs: 1, sm: 0 },
           backgroundColor: "#141212ff",
           fontWeight: "bold",
-          fontSize: { xs: "1rem", sm: "1.4rem" },
+          fontSize: { xs: "0.8rem", sm: "1.2rem" },
           borderRadius: { xs: "0", sm: "0 20px 20px 0" },
           textAlign: "center",
         }}
@@ -80,7 +80,7 @@ const AnnouncementBar = () => {
               sx={{
                 position: "absolute",
                 fontFamily: '"Roboto", sans-serif',
-                fontSize: { xs: "0.9rem", sm: "1.2rem", md: "1.4rem" },
+                fontSize: { xs: "0.8rem", sm: "1.0rem" },
                 whiteSpace: { xs: "normal", sm: "nowrap" },
                 lineHeight: 1.3,
               }}

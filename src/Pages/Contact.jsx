@@ -124,7 +124,7 @@ export default function Contact() {
           <Grid item xs={12} md={6} >
             <Paper
               elevation={3}
-              sx={{ p: 3, height: "100%", maxWidth: 600, margin: "0 auto",boxShadow: "2px 2px 8px rgba(24, 27, 25, 0.8)",bgcolor:"#b0c4b0ff"}}
+              sx={{ p: 3, height: "100%", maxWidth: 600, margin: "0 auto",boxShadow: "2px 2px 8px rgba(24, 27, 25, 0.8)",bgcolor:"#c6dac6ff"}}
             >
               <Typography variant="h3" gutterBottom textAlign={"center"} sx={{fontWeight:"bold"}}>
                 WRITE TO US
