@@ -124,7 +124,7 @@ export default function Contact() {
           <Grid item xs={12} md={6} >
             <Paper
               elevation={3}
-              sx={{ p: 3, height: "100%", maxWidth: 600, margin: "0 auto",boxShadow: "2px 2px 8px rgba(24, 27, 25, 0.8)",bgcolor:"#c6dac6ff"}}
+              sx={{ color:"#fff",p: 3, height: "100%", maxWidth: 600, margin: "0 auto",boxShadow: "2px 2px 8px rgba(24, 27, 25, 0.8)",bgcolor:"#4A6B4A"}}
             >
               <Typography  gutterBottom textAlign={"center"} sx={{fontWeight:"bold",fontSize:{xs:20,sm:25,md:30}}}>
                 WRITE TO US
@@ -144,6 +144,25 @@ export default function Contact() {
                       onChange={handleChange}
                       fullWidth
                       required
+                      InputProps={{
+                          style: { color: "#fff" }  // input text color
+                        }}
+                        InputLabelProps={{
+                          style: { color: "#fff" }  // label color
+                        }}
+                        sx={{
+                          "& .MuiOutlinedInput-root": {
+                            "& fieldset": {
+                              borderColor: "#fff",   // border color
+                            },
+                            "&:hover fieldset": {
+                              borderColor: "#4e4f50ff", // hover border color
+                            },
+                            "&.Mui-focused fieldset": {
+                              borderColor: "#0a0a0aff", // focused border color
+                            },
+                          },
+                        }}
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
@@ -155,6 +174,25 @@ export default function Contact() {
                       onChange={handleChange}
                       fullWidth
                       required
+                      InputProps={{
+                        style: { color: "#fff" }  
+                      }}
+                      InputLabelProps={{
+                        style: { color: "#fff" }  
+                      }}
+                      sx={{
+                        "& .MuiOutlinedInput-root": {
+                          "& fieldset": {
+                            borderColor: "#fff",   
+                          },
+                          "&:hover fieldset": {
+                            borderColor: "#4e4f50ff", 
+                          },
+                          "&.Mui-focused fieldset": {
+                            borderColor: "#101111ff", 
+                          },
+                        },
+                      }}
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
@@ -165,18 +203,54 @@ export default function Contact() {
                       onChange={handleChange}
                       fullWidth
                       required
+                            InputProps={{
+                          style: { color: "#fff" }  
+                        }}
+                        InputLabelProps={{
+                          style: { color: "#fff" }  
+                        }}
+                        sx={{
+                          "& .MuiOutlinedInput-root": {
+                            "& fieldset": {
+                              borderColor: "#fff",   
+                            },
+                            "&:hover fieldset": {
+                              borderColor: "#4e4f50ff", 
+                            },
+                            "&.Mui-focused fieldset": {
+                              borderColor: "#0c0c0cff", 
+                            },
+                          },
+                        }}
                     />
                   </Grid>
                   <Grid item xs={12} sm={4}>
                     <TextField
                       label="Query"
                       name="query"
-                      // multiline
-                      // rows={3}
                       value={formData.query}
                       onChange={handleChange}
                       fullWidth
                       required
+                                          InputProps={{
+                        style: { color: "#fff" }  
+                      }}
+                      InputLabelProps={{
+                        style: { color: "#fff" }  
+                      }}
+                      sx={{
+                        "& .MuiOutlinedInput-root": {
+                          "& fieldset": {
+                            borderColor: "#fff",   
+                          },
+                          "&:hover fieldset": {
+                            borderColor: "#4e4f50ff", 
+                          },
+                          "&.Mui-focused fieldset": {
+                            borderColor: "#0a0a0aff",
+                          },
+                        },
+                      }}
                     />
                   </Grid>
                   <Grid item xs={12} sm={4}>
@@ -186,6 +260,25 @@ export default function Contact() {
                       value={formData.country}
                       onChange={handleChange}
                       fullWidth
+                      InputProps={{
+                            style: { color: "#fff" }  
+                          }}
+                          InputLabelProps={{
+                            style: { color: "#fff" }  
+                          }}
+                          sx={{
+                            "& .MuiOutlinedInput-root": {
+                              "& fieldset": {
+                                borderColor: "#fff",   
+                              },
+                              "&:hover fieldset": {
+                                borderColor: "#4e4f50ff", 
+                              },
+                              "&.Mui-focused fieldset": {
+                                borderColor: "#080808ff", 
+                              },
+                            },
+                          }}
                     />
                   </Grid>
                   <Grid item xs={12} sm={4}>
@@ -195,6 +288,25 @@ export default function Contact() {
                       value={formData.state}
                       onChange={handleChange}
                       fullWidth
+                      InputProps={{
+                          style: { color: "#fff" }  
+                        }}
+                        InputLabelProps={{
+                          style: { color: "#fff" }  
+                        }}
+                        sx={{
+                          "& .MuiOutlinedInput-root": {
+                            "& fieldset": {
+                              borderColor: "#fff",  
+                            },
+                            "&:hover fieldset": {
+                              borderColor: "#4e4f50ff", 
+                            },
+                            "&.Mui-focused fieldset": {
+                              borderColor: "#080808ff", 
+                            },
+                          },
+                        }}
                     />
                   </Grid>
                   <Grid item xs={12} sm={4}>
@@ -204,6 +316,25 @@ export default function Contact() {
                       value={formData.city}
                       onChange={handleChange}
                       fullWidth
+                      InputProps={{
+                          style: { color: "#fff" }  
+                        }}
+                        InputLabelProps={{
+                          style: { color: "#fff" }  
+                        }}
+                        sx={{
+                          "& .MuiOutlinedInput-root": {
+                            "& fieldset": {
+                              borderColor: "#fff",   
+                            },
+                            "&:hover fieldset": {
+                              borderColor: "#4e4f50ff", 
+                            },
+                            "&.Mui-focused fieldset": {
+                              borderColor: "#010408ff", 
+                            },
+                          },
+                        }}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -214,6 +345,25 @@ export default function Contact() {
                       onChange={handleChange}
                       fullWidth
                       required
+                      InputProps={{
+                          style: { color: "#fff" }  
+                        }}
+                        InputLabelProps={{
+                          style: { color: "#fff" }  
+                        }}
+                        sx={{
+                          "& .MuiOutlinedInput-root": {
+                            "& fieldset": {
+                              borderColor: "#fff",   
+                            },
+                            "&:hover fieldset": {
+                              borderColor: "#4e4f50ff", 
+                            },
+                            "&.Mui-focused fieldset": {
+                              borderColor: "#070707ff", 
+                            },
+                          },
+                        }}
                     />
                   </Grid>
                 </Grid>

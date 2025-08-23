@@ -168,7 +168,7 @@ export default function NavBar() {
                     key={i}
                     sx={{ pl: 4,
                         "&:hover": {
-                        backgroundColor: "#dae4daff", 
+                        backgroundColor: "#d1d3d1ff", 
                       },
                      }}
                     onClick={() => {
@@ -188,7 +188,7 @@ export default function NavBar() {
             key={index}
             sx={{
               "&:hover": {
-                backgroundColor: "#d9dedfff", 
+                backgroundColor: "#def0f3ff", 
               },
             }}
             onClick={() => {
