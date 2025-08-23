@@ -54,7 +54,7 @@ const AnnouncementBar = () => {
           textAlign: "center",
         }}
       >
-        Announcements
+        ANNOUNCEMENTS
       </Box>
 
       {/* Fade in/out announcements */}
@@ -79,8 +79,8 @@ const AnnouncementBar = () => {
             <Typography
               sx={{
                 position: "absolute",
-                fontFamily: '"Roboto", sans-serif',
-                fontSize: { xs: "0.8rem", sm: "1.0rem" },
+                fontFamily: '"Roboto"',
+                fontSize: { xs: "0.8rem", sm: "1.0rem",md:"1.4rem" },
                 whiteSpace: { xs: "normal", sm: "nowrap" },
                 lineHeight: 1.3,
               }}

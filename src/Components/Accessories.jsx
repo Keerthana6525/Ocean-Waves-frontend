@@ -36,14 +36,14 @@ const accessrs = [
 
 function Accessories() {
   return (
-    <Box sx={{ bgcolor: "#f5f5f5", py: 4 }}>
+    <Box sx={{ bgcolor: "#f5f5f5", py: {xs:0,md:4} }}>
       <Container maxWidth="lg">
         <Typography
           variant="h3"
           fontWeight="bold"
           color="#000"
           gutterBottom
-          sx={{ textAlign: "center" ,fontSize:{xs:25,sm:30,md:40} }}
+          sx={{ textAlign: "center" ,fontFamily:'sans-serif',fontSize:{xs:25,sm:30,md:40} }}
         
         >
           ACCESSORIES

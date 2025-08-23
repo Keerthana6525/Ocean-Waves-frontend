@@ -77,7 +77,7 @@ export default function NavBar() {
               variant="body1"
               sx={{
                 fontFamily: "'Inter', sans-serif",
-                fontSize: { xs: "10px", sm: "16px", md: "22px",lg:'33px' },
+                fontSize: { xs: "13px", sm: "16px", md: "22px",lg:'33px' },
                 color: "white",
                 textAlign: "start",
               }}
@@ -88,7 +88,7 @@ export default function NavBar() {
               variant="body1"
               sx={{
                 fontFamily: "'Inter',sans-serif",
-                fontSize: { xs: "8px", sm: "13px", md: "16px",lg:'24px' },
+                fontSize: { xs: "12px", sm: "13px", md: "16px",lg:'24px' },
                 color: "white",
                 textAlign: "start",
               }}
@@ -141,68 +141,83 @@ export default function NavBar() {
         {/* Hamburger Menu for Mobile */}
         {isMobile && (
           <>
-            <IconButton sx={{ color: "white", ml: "auto" }} onClick={toggleDrawer(true)}>
-              <MenuIcon />
-            </IconButton>
+            <Box sx={{ cursor:"pointer",color: "white", ml: "auto" }} onClick={toggleDrawer(true)}>
+              <MenuIcon sx={{fontSize: 32}} />
+            </Box>
             <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
-  <Box sx={{ width: 250 }} role="presentation">
-    <List>
-      {menuItems.map((item, index) =>
-        item.subItems ? (
-          <React.Fragment key={index}>
-            <ListItem button onClick={() => setOpenServices(!openServices)}
-                sx={{
-                "&:hover": {
-                  backgroundColor: "#787a7aff",
-                },
-              }}
-              >
-              <ListItemText primary={item.text} />
-              {openServices ? <ExpandLess /> : <ExpandMore />}
-            </ListItem>
-            <Collapse in={openServices} timeout="auto" unmountOnExit>
-              <List component="div" disablePadding>
-                {item.subItems.map((sub, i) => (
-                  <ListItem
-                    button
-                    key={i}
-                    sx={{ pl: 4,
-                        "&:hover": {
-                        backgroundColor: "#d1d3d1ff", 
-                      },
-                     }}
-                    onClick={() => {
-                      navigate(sub.link);
-                      setDrawerOpen(false); 
-                    }}
-                  >
-                    <ListItemText primary={sub.text} />
-                  </ListItem>
-                ))}
-              </List>
-            </Collapse>
-          </React.Fragment>
-        ) : (
-          <ListItem
-            button
-            key={index}
-            sx={{
-              "&:hover": {
-                backgroundColor: "#def0f3ff", 
-              },
-            }}
-            onClick={() => {
-              navigate(item.link);
-              setDrawerOpen(false); 
-            }}
-          >
-            <ListItemText primary={item.text} />
-          </ListItem>
-        )
-      )}
-    </List>
-  </Box>
-</Drawer>
+                <Box sx={{ width: 250,bgcolor:"#d3d1d1ff" }} role="presentation">
+                  <List>
+                    {menuItems.map((item, index) =>
+                      item.subItems ? (
+                        <React.Fragment key={index}>
+                          <ListItem button onClick={() => setOpenServices(!openServices)}
+                              sx={{
+                              "&:hover": {
+                                backgroundColor: "#787a7aff",
+                              },
+                            }}
+                            >
+                            <ListItemText primary={item.text} 
+                              primaryTypographyProps={{
+                                fontSize:"18px",
+                                fontFamily:"Arial",
+                                fontWeight:"bold",
+                                color:"#395f43ff"
+                              }}
+                            />
+                            {openServices ? <ExpandLess /> : <ExpandMore />}
+                          </ListItem>
+                          <Collapse in={openServices} timeout="auto" unmountOnExit>
+                            <List component="div" disablePadding>
+                              {item.subItems.map((sub, i) => (
+                                <ListItem
+                                  button
+                                  key={i}
+                                  sx={{ pl: 4,
+                                      "&:hover": {
+                                      backgroundColor: "#d1d3d1ff", 
+                                    },
+                                  }}
+                                  onClick={() => {
+                                    navigate(sub.link);
+                                    setDrawerOpen(false); 
+                                  }}
+                                >
+                                  <ListItemText primary={sub.text}
+                                    primaryTypographyProps={{ 
+                                    fontSize: "18px", 
+                                    fontFamily: "Courier New", 
+                                    color: "#444" 
+                                  }} 
+                                  />
+                                </ListItem>
+                              ))}
+                            </List>
+                          </Collapse>
+                        </React.Fragment>
+                      ) : (
+                        <ListItem
+                          button
+                          key={index}
+                          sx={{
+                            "&:hover": {
+                              backgroundColor: "#def0f3ff", 
+                            },
+                          }}
+                          onClick={() => {
+                            navigate(item.link);
+                            setDrawerOpen(false); 
+                          }}
+                        >
+                      <ListItemText primary={item.text}
+                            primaryTypographyProps = {{ fontSize: "18px", fontFamily: "Arial", fontWeight: "bold", color: "#315c34ff" }}
+                        />
+                        </ListItem>
+                      )
+                    )}
+                  </List>
+                </Box>
+              </Drawer>
 
           </>
         )}

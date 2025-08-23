@@ -51,7 +51,7 @@ function Officeequp() {
           fontWeight="bold"
           color="#000"
           gutterBottom
-          sx={{ textAlign: "center",fontSize:{xs:25,sm:30,md:40} }}
+          sx={{ textAlign: "center",fontFamily:"sans-serif",fontSize:{xs:25,sm:30,md:40} }}
         
         >
           OFFICE EQUIPMENTS & COMPUTERS

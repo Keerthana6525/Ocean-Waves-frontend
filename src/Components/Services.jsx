@@ -52,7 +52,7 @@ function Services() {
         color='#000'
         padding={3}
         // gutterBottom
-        sx={{ fontSize: { xs: 30, sm: 36, md: 48 } }}
+        sx={{fontFamily:'sans-serif', fontSize: { xs: 30, sm: 36, md: 48 } }}
       >
         SERVICES
       </Typography>
@@ -66,7 +66,7 @@ function Services() {
                 position: 'relative',
                 width: '100%',
                 maxWidth: '400px',
-                height: '500px',
+                height: { xs: 280, sm: 380, md: 500 },
                 borderRadius: 5,
                 overflow: 'hidden',
                 boxShadow: 4,
@@ -103,11 +103,12 @@ function Services() {
                   bgcolor: 'rgba(0,0,0,0.6)',
                   color: '#fff',
                   textAlign: 'center',
+                  fontFamily:'sans-serif',
                   py: 4,
                   transition: "opacity 0.3s ease"
                 }}
               >
-                <Typography  sx={{fontSize:{xs:15,sm:28,md:32}, fontWeight: 600 }}>
+                <Typography  sx={{fontSize:{xs:15,sm:28,md:30}, fontWeight: 600 }}>
                   {item.title}
                 </Typography>
               </Box>
@@ -126,7 +127,8 @@ function Services() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   textAlign: 'center',
-                  color: '#000',
+                  color: '#fff',
+                  bgcolor: 'rgba(0,0,0,0.6)',
                   opacity: 0,
                   transform: 'translateY(20%)',
                   transition: 'all 0.5s ease',
@@ -136,6 +138,7 @@ function Services() {
                 <Typography
                   variant="h5"
                   sx={{
+                    fontFamily:'sans-serif',
                     fontWeight: 700,
                     mb: 2,
                     textShadow: '1px 1px 6px rgba(0,0,0,0.6)',
@@ -149,6 +152,7 @@ function Services() {
                   variant="body1"
                   sx={{
                     maxWidth: 320,
+                    fontFamily:'Arial',
                     fontSize: 18,
                     lineHeight: 1.5,
                   }}

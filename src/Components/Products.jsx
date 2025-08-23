@@ -42,7 +42,7 @@ function Products() {
           fontWeight="bold"
           color="#000"
           gutterBottom
-          sx={{ textAlign:"center",fontSize:{xs:25,sm:3,md:40} }}
+          sx={{ textAlign:"center",fontFamily:'sans-serif',fontSize:{xs:25,sm:3,md:40} }}
         >
           PRODUCTS
         </Typography>

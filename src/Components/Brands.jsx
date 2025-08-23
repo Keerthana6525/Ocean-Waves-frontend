@@ -56,14 +56,14 @@ const brands = [
 
 function Brands() {
   return (
-    <Box sx={{ bgcolor: "#fff", py: 4 }}>
+    <Box sx={{ bgcolor: "#f3efefff", py: 4 }}>
       <Container maxWidth="lg">
         <Typography
           variant="h3"
           fontWeight="bold"
           color="#000"
           gutterBottom
-          sx={{ textAlign:"center",fontSize:{xs:25,sm:3,md:40} }}
+          sx={{ textAlign:"center",fontFamily:'sans-serif',fontSize:{xs:25,sm:3,md:40} }}
         
         >
           OUR BRANDS

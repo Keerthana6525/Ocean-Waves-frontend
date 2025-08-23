@@ -126,7 +126,7 @@ export default function Contact() {
               elevation={3}
               sx={{ color:"#fff",p: 3, height: "100%", maxWidth: 600, margin: "0 auto",boxShadow: "2px 2px 8px rgba(24, 27, 25, 0.8)",bgcolor:"#4A6B4A"}}
             >
-              <Typography  gutterBottom textAlign={"center"} sx={{fontWeight:"bold",fontSize:{xs:20,sm:25,md:30}}}>
+              <Typography  gutterBottom textAlign={"center"} sx={{fontWeight:"bold",fontSize:{xs:20,sm:25,md:30}, fontFamily:"serif,Georgia"}}>
                 WRITE TO US
               </Typography>
               
