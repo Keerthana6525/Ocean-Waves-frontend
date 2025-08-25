@@ -126,6 +126,7 @@ function Products() {
               
               sx={{
                 fontWeight: "bold",
+                fontFamily:"sans-serif",
                 fontSize:{xs:40,sm:60,md:80},
                 pt: {xs:6,sm:6,md:5},
                 textShadow: "2px 2px 8px rgba(0,0,0,0.7)",

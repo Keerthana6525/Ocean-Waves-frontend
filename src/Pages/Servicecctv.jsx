@@ -261,14 +261,16 @@ function Servicecctv() {
     },
   }));
 
-  const fullText = `OceanWaves is a cutting-edge technology company specializing in providing top-notch
-   Network Solutions for businesses seeking a robust and reliable online presence. With a commitment to
-    excellence, OceanWaves offers a comprehensive suite of services tailored to meet the diverse needs of
-     its clients. From seamless domain registration to secure and scalable website hosting, OceanWaves ensures that businesses can navigate the digital landscape with confidence. The company's experienced team of professionals is dedicated to delivering innovative solutions that optimize network performance, enhance security, and foster online growth. With OceanWaves as your trusted partner, you can ride the waves of the digital era with a secure
-   and efficient network infrastructure, setting the stage for success in the online domain.`;
+  const fullText = `Get the ultimate security for your business or home premises with our advanced CCTV and 
+  Access control system in Dubai, UAE. Our sophisticated camera monitoring and access-controls will give you
+   peace of mind knowing that your property is safe and secure from any threats or intrusions. Let us help 
+   you fortify your premises with a tailor-made solution to fit all of your needs. Take advantage of our 
+   expertise and experience, and enjoy complete protection with customized solutions that go beyond the ordinary!
+    We are always promised to provide impeccable customer service and support. We are selling the leading CCTV brand cameras like HikVision, UNV,
+   Dahua, etc. We have a bunch of skilled certified CCTV professionals to install CCTV surveillance cameras in your home, villa, or business.`;
 
-  const shortText = `OceanWaves is a cutting-edge technology company specializing in providing top-notch
-   Network Solutions for businesses seeking a robust and reliable online presence..`;
+  const shortText = `Get the ultimate security for your business or home premises with our advanced CCTV and 
+  Access control system in Dubai, UAE. Our sophisticated camera..`;
 
   return (
     <Box sx={{ bgcolor: "#ffff", pb: 6 }}>
@@ -287,13 +289,15 @@ function Servicecctv() {
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
         />
         <Typography
-          variant="h3"
+          
           sx={{
             position: "absolute",
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
             color: "#f7f4f4ff",
+            fontFamily:"sans-serif",
+            fontSize:{xs:25,sm:34,md:40},
             fontWeight: "bold",
             textShadow: "2px 2px 8px rgba(15, 15, 15, 0.8)",
             textAlign: "center",

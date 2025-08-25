@@ -69,7 +69,7 @@ export default function NavBar() {
             alt="Logo"
             sx={{
               height: { xs: 40, sm: 50, md: 70 },
-              mr: 2,
+              mr: {xs:0,md:2},
             }}
           />
           <Box sx={{ p: 1 }}>
@@ -88,7 +88,7 @@ export default function NavBar() {
               variant="body1"
               sx={{
                 fontFamily: "'Inter',sans-serif",
-                fontSize: { xs: "12px", sm: "13px", md: "16px",lg:'24px' },
+                fontSize: { xs: "10px", sm: "13px", md: "16px",lg:'24px' },
                 color: "white",
                 textAlign: "start",
               }}

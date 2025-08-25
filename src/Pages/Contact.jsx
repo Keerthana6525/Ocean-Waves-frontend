@@ -60,6 +60,7 @@ export default function Contact() {
             left: "50%",
             transform: "translate(-50%, -50%)",
             color: "#000",
+            fontFamily:'sans-serif',
             fontSize:{xs:30,sm:38,md:50},
             fontWeight: "bold",
             textShadow: "2px 2px 8px rgba(0,0,0,0.7)",

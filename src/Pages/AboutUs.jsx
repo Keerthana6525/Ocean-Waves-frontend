@@ -66,11 +66,11 @@ const AboutUs = () => {
           </ImgContainer>
 
           <Box>
-            <Typography sx={{ fontSize: '35px', color: 'black', fontWeight: '700', my: 3 }}>
+            <Typography sx={{ fontSize: '35px', fontFamily:'sans-serif',color: 'black', fontWeight: '700', my: 3 }}>
               ABOUT OUR COMPANY
             </Typography>
 
-            <Typography sx={{ fontSize: '18px', color: 'black', lineHeight: '27px' }}>
+            <Typography sx={{ fontSize: '18px',fontFamily:'Arial', color: 'black', lineHeight: '27px' }}>
               {isSmallScreen && !showMore ? shortText : fullText}
             </Typography>
 

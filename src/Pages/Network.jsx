@@ -115,6 +115,7 @@ function Network() {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
+            fontFamily:"sans-serif",
             fontSize:{xs:20,sm:35,md:40},
             color: "#fff",
             fontWeight: "bold",

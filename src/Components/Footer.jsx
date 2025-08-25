@@ -92,7 +92,7 @@ function Footer() {
               <Typography variant="h5" sx={{fontFamily:'serif', fontWeight: "bold", mb: 1,ml: { xs: 0, sm: 0, md: 6 } }}>
                 Follow Us
               </Typography>
-              <Box sx={{ display: "flex", alignItems: "center", pl: 0,ml: { xs: 3, sm: 0, md: 6 } }}>
+              <Box sx={{ display: "flex", alignItems: "center", pl: 0,ml: { xs: 5, sm: 0, md: 6 } }}>
                 <IconButton
                   href="#"
                   color="inherit"
@@ -126,7 +126,7 @@ function Footer() {
                   alt="QR Code"
                   sx={{ height: 130 ,ml: { xs: 3, sm: 0, md: 6 }}}
                 />
-                <Typography variant="caption" sx={{ display: "block", mt: 1 }}>
+                <Typography variant="caption" sx={{ display: "block", ml: {xs:1,sm:0,md:3},mt:1 }}>
                   For More Details, Scan QR Code
                 </Typography>
               </Box>

@@ -67,7 +67,7 @@ const About = () => {
           </ImgContainer>
 
           <Box  sx={{my: {xs:0,sx:0.8,md:2}}}>
-            <Typography sx={{ fontSize: {xs:"30px",md:'35px'},fontFamily:'sans-serif' ,color: 'black', fontWeight: '700', my: {xs:1,md:2} }}>
+            <Typography sx={{ fontSize: {xs:"28px",md:'35px'},fontFamily:'sans-serif' ,color: 'black', fontWeight: '700', my: {xs:1,md:2} }}>
               OCEAN WAVES SECURITY SYSTEM L.L.C.
             </Typography>
 

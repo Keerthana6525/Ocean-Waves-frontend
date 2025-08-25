@@ -108,7 +108,7 @@ function Services() {
                   transition: "opacity 0.3s ease"
                 }}
               >
-                <Typography  sx={{fontSize:{xs:15,sm:28,md:30}, fontWeight: 600 }}>
+                <Typography  sx={{fontSize:{xs:15,sm:25,md:28}, fontWeight: 600 }}>
                   {item.title}
                 </Typography>
               </Box>
