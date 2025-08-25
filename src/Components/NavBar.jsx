@@ -22,12 +22,20 @@ import logo from "../assets/ocean-waves.png";
 import { Collapse } from "@mui/material";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
+import SearchIcon from "@mui/icons-material/Search";
+import CloseIcon from "@mui/icons-material/Close";
+import { TextField, InputAdornment } from "@mui/material";
+import { motion, AnimatePresence } from "framer-motion";
+
 
 
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [openServices, setOpenServices] = useState(false);
+
+  const [showSearch, setShowSearch] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
 
   const theme = useTheme();
@@ -97,46 +105,46 @@ export default function NavBar() {
             </Typography>
           </Box>
         </Box>
+            {/* Menu for Large Screens */}
+            {!isMobile && !showSearch && (   // hide menu items when search bar is active
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  width: "100%",
+                  maxWidth: "600px",
+                  ml: "auto",
+                }}
+              >
+                <Button sx={{ color: "white", fontSize:{sm:'10px',md:'18px'}, fontFamily: "Arial" }} onClick={() => navigate("/")}>
+                  HOME
+                </Button>
+                <Button sx={{ color: "white", fontSize:{sm:'10px',md:'18px'}, fontFamily: "Arial" }} onClick={() => navigate("/about")}>
+                  ABOUT US
+                </Button>
+                <Button
+                  sx={{ color: "white", fontSize: {sm:'10px',md:'18px'}, fontFamily: "Arial" }}
+                  onClick={handleOpenMenu}
+                  endIcon={<ArrowDropDownIcon />}
+                >
+                  SERVICES
+                </Button>
+                <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleCloseMenu}>
+                  {menuItems[2].subItems.map((sub, i) => (
+                    <MenuItem key={i} onClick={() => { handleCloseMenu(); navigate(sub.link); }}>
+                      {sub.text}
+                    </MenuItem>
+                  ))}
+                </Menu>
+                <Button sx={{ color: "white", fontSize: {sm:'10px',md:'18px'}, fontFamily: "Arial" }} onClick={() => navigate("/products")}>
+                  PRODUCTS
+                </Button>
+                <Button sx={{ color: "white", fontSize: {sm:'10px',md:'18px'}, fontFamily: "Arial" }} onClick={() => navigate("/contact")}>
+                  CONTACT
+                </Button>
+              </Box>
+            )}
 
-        {/* Menu for Large Screens */}
-        {!isMobile && (
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              width: "100%",
-              maxWidth: "600px",
-              ml: "auto",
-            }}
-          >
-            <Button sx={{ color: "white", fontSize:{sm:'10px',md:'18px'}, fontFamily: "Arial" }} onClick={() => navigate("/")}>
-              HOME
-            </Button>
-            <Button sx={{ color: "white", fontSize:{sm:'10px',md:'18px'}, fontFamily: "Arial" }} onClick={() => navigate("/about")}>
-              ABOUT US
-            </Button>
-            <Button
-              sx={{ color: "white", fontSize: {sm:'10px',md:'18px'}, fontFamily: "Arial" }}
-              onClick={handleOpenMenu}
-              endIcon={<ArrowDropDownIcon />}
-            >
-              SERVICES
-            </Button>
-            <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleCloseMenu}>
-              {menuItems[2].subItems.map((sub, i) => (
-                <MenuItem key={i} onClick={() => { handleCloseMenu(); navigate(sub.link); }}>
-                  {sub.text}
-                </MenuItem>
-              ))}
-            </Menu>
-            <Button sx={{ color: "white", fontSize: {sm:'10px',md:'18px'}, fontFamily: "Arial" }} onClick={() => navigate("/products")}>
-              PRODUCTS
-            </Button>
-            <Button sx={{ color: "white", fontSize: {sm:'10px',md:'18px'}, fontFamily: "Arial" }} onClick={() => navigate("/contact")}>
-              CONTACT
-            </Button>
-          </Box>
-        )}
 
         {/* Hamburger Menu for Mobile */}
         {isMobile && (
@@ -152,8 +160,9 @@ export default function NavBar() {
                         <React.Fragment key={index}>
                           <ListItem button onClick={() => setOpenServices(!openServices)}
                               sx={{
+                                backgroundColor: index % 2 === 0?"#e3f2fd": "#fff3e0",
                               "&:hover": {
-                                backgroundColor: "#787a7aff",
+                                backgroundColor: index % 2 === 0? "#bbdefb" : "#ffe0b2",
                               },
                             }}
                             >
@@ -174,8 +183,9 @@ export default function NavBar() {
                                   button
                                   key={i}
                                   sx={{ pl: 4,
+                                    backgroundColor: i % 2 === 0 ? "#d6abc8ff" : "#e0ddf0ff",
                                       "&:hover": {
-                                      backgroundColor: "#d1d3d1ff", 
+                                      backgroundColor: i % 2 === 0 ? "#fbbbf0ff" : "#c3b2ffff", 
                                     },
                                   }}
                                   onClick={() => {
@@ -200,8 +210,9 @@ export default function NavBar() {
                           button
                           key={index}
                           sx={{
-                            "&:hover": {
-                              backgroundColor: "#def0f3ff", 
+                            backgroundColor: index % 2 === 0 ? "#e3f2fd" : "#fff3e0", // alternate row colors
+                              "&:hover": {
+                                backgroundColor: index % 2 === 0 ? "#bbdefb" : "#ffe0b2", 
                             },
                           }}
                           onClick={() => {
@@ -221,6 +232,85 @@ export default function NavBar() {
 
           </>
         )}
+        {/* Search */}
+          {!isMobile && (
+            <Box sx={{ ml: "auto", display:"flex", alignItems:"center" }}>
+              <AnimatePresence mode="wait">
+              {showSearch ? (
+                <motion.div
+                  key="search-bar"
+                  initial={{ opacity: 0, width: 50 }}
+                  animate={{ opacity: 1, width: "250px" }}
+                  exit={{ opacity: 0, width: 0 }}
+                  transition={{ duration: 0.3 ,ease:"easeInOut"}}
+                  style={{ overflow:"hidden"}} // prevents weird layout shift
+                >
+                <TextField
+                  size="small"
+                  variant="outlined"
+                  placeholder="Search..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onKeyDown={(e) => {
+                  if (e.key === "Enter" && searchTerm.trim()) {
+                    navigate(`/search?q=${searchTerm}`);
+                    setShowSearch(false);
+                    setSearchTerm("");
+                  }
+                }}
+                sx={{minWidth:{xs:"120px", sm:"200px", md:"250px"}, 
+                "& .MuiOutlinedInput-root":{
+                  color:"white",
+                  "& fieldset":{
+                    borderColor:"white",
+                  },
+                  "&:hover fieldset":{
+                    borderColor:'white',
+                  },
+                  "&.Mui-focused fieldset":{
+                    borderColor:"white"
+                  },
+                },
+                "& .MuiInputBase-input::placeholder":{
+                  color:"white",
+                  opacity:1,
+                },
+              
+              }}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <SearchIcon  sx={{color:"white"}}/>
+                      </InputAdornment>
+                    ),
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton onClick={() => setShowSearch(false)}>
+                          <CloseIcon  sx={{color:"white"}}/>
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="search-icon"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.3 }}
+                  // style={{ display: "inline-block" }}
+                >
+                <IconButton key="search-icon" onClick={() => setShowSearch(true)} sx={{ color: "white" }}>
+                  <SearchIcon />
+                </IconButton>
+                </motion.div>
+              )}
+              </AnimatePresence>
+            </Box>
+          )}
+
       </Toolbar>
     </AppBar>
   );
