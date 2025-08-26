@@ -26,6 +26,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
 import { TextField, InputAdornment } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
+import CustomMenuItem from "./CustomMenuItem";
 
 
 
@@ -113,9 +114,6 @@ export default function NavBar() {
                 sx={{
                   display: "flex",
                   justifyContent: "flex-end",
-                  // width: "100%",
-                  // maxWidth: "550px",
-                  // ml: "auto",
                   flexGrow: 1,
                   gap:2
                 }}
