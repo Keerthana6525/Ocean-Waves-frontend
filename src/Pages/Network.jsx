@@ -41,11 +41,11 @@ import service6 from "../assets/car-proches-ser.jpg";
 
 
 const networkProducts = [
-  { src: img1, name: "Router" },
-  { src: img2, name: "Switch" },
-  { src: img3, name: "Firewall" },
-  { src: img4, name: "Access Point" },
-  { src: img5, name: "Server Rack" },
+  { src: img1, name: "Product 1" },
+  { src: img2, name: "Product 2" },
+  { src: img3, name: "Product 3" },
+  { src: img4, name: "Product 4" },
+  { src: img5, name: "Product 5" },
 ];
 
 const services = [

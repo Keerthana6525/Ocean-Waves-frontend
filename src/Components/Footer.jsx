@@ -23,14 +23,17 @@ function Footer() {
               component="img"
               src={logo}
               alt="Ocean Waves"
-              sx={{ height: 80, mr: 2 }}
+              sx={{ 
+                height: { xs: 40, sm: 50, md: 70 },
+                mr: {xs:0,md:2},
+             }}
             />
-            <Box>
+            <Box sx={{ p:1 }}>
               <Typography
                 variant="body1"
                 sx={{
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: { xs: "18px", sm: "22px", md: "34px" },
+                  fontSize: { xs: "13px", sm: "16px", md: "22px",lg:'33px' },
                   fontWeight: "bold",
                   color: "white",
                   
@@ -41,7 +44,8 @@ function Footer() {
               <Typography
                 variant="body1"
                 sx={{
-                  fontSize: { xs: "14px", sm: "18px", md: "26px" },
+                  fontFamily: "'Inter',sans-serif",
+                  fontSize: { xs: "10px", sm: "13px", md: "16px",lg:'24px' },
                   fontWeight: "bold",
                   color: "white",
                   
@@ -52,7 +56,7 @@ function Footer() {
             </Box>
           </Box>
 
-          <Typography variant="body2" sx={{ fontFamily:'Arial',maxWidth: 500, lineHeight: "30px"}}>
+          <Typography variant="body2" sx={{ fontSize:{xs:'10px',sm:'15px'},fontFamily:'Arial',maxWidth: 500, lineHeight: "30px"}}>
             Ocean Waves Security Systems was established in the year 2006 in Abu
             Dhabi, the capital of United Arab Emirates.
           </Typography>
@@ -63,7 +67,7 @@ function Footer() {
           <Grid container spacing={{xs:2,sm:3,md:4}}>
             {/* Contact Info */}
             <Grid item xs={12} sm={6}>
-              <Typography variant="h5" sx={{fontFamily:'serif', fontWeight: "bold", mb: 1 }}>
+              <Typography variant="h7" sx={{fontFamily:'serif', fontWeight: "bold", mb: 1 }}>
                 Contact Us
               </Typography>
               <Typography variant="body2" sx={{ fontFamily:'Arial',lineHeight: "30px" }}>
@@ -89,10 +93,10 @@ function Footer() {
 
             {/* Follow Us + QR */}
             <Grid item xs={12} sm={6} sx={{}}>
-              <Typography variant="h5" sx={{fontFamily:'serif', fontWeight: "bold", mb: 1,ml: { xs: 0, sm: 0, md: 6 } }}>
+              <Typography variant="h7" sx={{fontFamily:'serif', fontWeight: "bold", mb: 1,ml: { xs: 0, sm: 0, md: 6 } }}>
                 Follow Us
               </Typography>
-              <Box sx={{ display: "flex", alignItems: "center", pl: 0,ml: { xs: 5, sm: 0, md: 6 } }}>
+              <Box sx={{ display: "flex", alignItems: "center", pl: 0,ml: { xs: 3, sm: 0, md: 6 } }}>
                 <IconButton
                   href="#"
                   color="inherit"
@@ -124,9 +128,9 @@ function Footer() {
                   component="img"
                   src={qr}
                   alt="QR Code"
-                  sx={{ height: 130 ,ml: { xs: 3, sm: 0, md: 6 }}}
+                  sx={{ height: 80 ,ml: { xs: 3, sm: 0, md: 6 }}}
                 />
-                <Typography variant="caption" sx={{ display: "block", ml: {xs:1,sm:0,md:3},mt:1 }}>
+                <Typography variant="caption" sx={{ display: "block", ml: {xs:0,sm:0,md:3},mt:1 }}>
                   For More Details, Scan QR Code
                 </Typography>
               </Box>

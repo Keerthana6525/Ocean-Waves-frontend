@@ -87,6 +87,7 @@ export default function NavBar() {
                 fontFamily: "'Inter', sans-serif",
                 fontSize: { xs: "13px", sm: "16px", md: "22px",lg:'33px' },
                 color: "white",
+                fontWeight: "bold",
                 textAlign: "start",
               }}
             >
@@ -98,6 +99,7 @@ export default function NavBar() {
                 fontFamily: "'Inter',sans-serif",
                 fontSize: { xs: "10px", sm: "13px", md: "16px",lg:'24px' },
                 color: "white",
+                fontWeight:"bold",
                 textAlign: "start",
               }}
             >
