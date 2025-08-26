@@ -17,7 +17,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useTheme } from "@mui/material/styles";
-import { useNavigate } from "react-router-dom";  //  import navigate hook
+import { useNavigate } from "react-router-dom";  
 import logo from "../assets/ocean-waves.png";
 import { Collapse } from "@mui/material";
 import ExpandLess from "@mui/icons-material/ExpandLess";
@@ -40,7 +40,7 @@ export default function NavBar() {
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
-  const navigate = useNavigate(); // create navigate function
+  const navigate = useNavigate(); 
 
   const handleOpenMenu = (event) => setAnchorEl(event.currentTarget);
   const handleCloseMenu = () => setAnchorEl(null);
@@ -97,7 +97,7 @@ export default function NavBar() {
               variant="body1"
               sx={{
                 fontFamily: "'Inter',sans-serif",
-                fontSize: { xs: "10px", sm: "13px", md: "16px",lg:'24px' },
+                fontSize: { xs: "10px", sm: "13px", md: "16px",lg:'20px' },
                 color: "white",
                 fontWeight:"bold",
                 textAlign: "start",
@@ -112,20 +112,22 @@ export default function NavBar() {
               <Box
                 sx={{
                   display: "flex",
-                  justifyContent: "space-between",
-                  width: "100%",
-                  maxWidth: "600px",
-                  ml: "auto",
+                  justifyContent: "flex-end",
+                  // width: "100%",
+                  // maxWidth: "550px",
+                  // ml: "auto",
+                  flexGrow: 1,
+                  gap:2
                 }}
               >
-                <Button sx={{ color: "white", fontSize:{sm:'10px',md:'18px'}, fontFamily: "Arial" }} onClick={() => navigate("/")}>
+                <Button sx={{ color: "white", fontSize:{sm:'10px',md:'16px'}, fontFamily: "Arial" }} onClick={() => navigate("/")}>
                   HOME
                 </Button>
-                <Button sx={{ color: "white", fontSize:{sm:'10px',md:'18px'}, fontFamily: "Arial" }} onClick={() => navigate("/about")}>
+                <Button sx={{ color: "white", fontSize:{sm:'10px',md:'16px'}, fontFamily: "Arial" }} onClick={() => navigate("/about")}>
                   ABOUT US
                 </Button>
                 <Button
-                  sx={{ color: "white", fontSize: {sm:'10px',md:'18px'}, fontFamily: "Arial" }}
+                  sx={{ color: "white", fontSize: {sm:'10px',md:'16px'}, fontFamily: "Arial" }}
                   onClick={handleOpenMenu}
                   endIcon={<ArrowDropDownIcon />}
                 >
@@ -133,20 +135,26 @@ export default function NavBar() {
                 </Button>
                 <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleCloseMenu}>
                   {menuItems[2].subItems.map((sub, i) => (
-                    <MenuItem key={i} onClick={() => { handleCloseMenu(); navigate(sub.link); }}>
+                    <MenuItem key={i} onClick={() => { handleCloseMenu(); navigate(sub.link); }}
+                      sx={{
+                            backgroundColor: i % 2 === 0 ? "#f5f5f5" : "#e0e0e0", // alternate bg
+                              "&:hover": {
+                                backgroundColor: i % 2 === 0 ? "#d6d6d6" : "#c2c2c2", // hover effect
+                                },
+                          }}    
+                    >
                       {sub.text}
                     </MenuItem>
                   ))}
                 </Menu>
-                <Button sx={{ color: "white", fontSize: {sm:'10px',md:'18px'}, fontFamily: "Arial" }} onClick={() => navigate("/products")}>
+                <Button sx={{ color: "white", fontSize: {sm:'10px',md:'16px'}, fontFamily: "Arial" }} onClick={() => navigate("/products")}>
                   PRODUCTS
                 </Button>
-                <Button sx={{ color: "white", fontSize: {sm:'10px',md:'18px'}, fontFamily: "Arial" }} onClick={() => navigate("/contact")}>
+                <Button sx={{ color: "white", fontSize: {sm:'10px',md:'16px'}, fontFamily: "Arial" }} onClick={() => navigate("/contact")}>
                   CONTACT
                 </Button>
               </Box>
             )}
-
 
         {/* Hamburger Menu for Mobile */}
         {isMobile && (
@@ -212,7 +220,7 @@ export default function NavBar() {
                           button
                           key={index}
                           sx={{
-                            backgroundColor: index % 2 === 0 ? "#e3f2fd" : "#fff3e0", // alternate row colors
+                            backgroundColor: index % 2 === 0 ? "#e3f2fd" : "#fff3e0",
                               "&:hover": {
                                 backgroundColor: index % 2 === 0 ? "#bbdefb" : "#ffe0b2", 
                             },
@@ -302,7 +310,6 @@ export default function NavBar() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.3 }}
-                  // style={{ display: "inline-block" }}
                 >
                 <IconButton key="search-icon" onClick={() => setShowSearch(true)} sx={{ color: "white" }}>
                   <SearchIcon />
