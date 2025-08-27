@@ -232,7 +232,7 @@ function Gates() {
                   {section.title}
                 </Typography>
                 <Typography
-                  sx={{ fontSize: "18px", color: "black", lineHeight: "27px" }}
+                  sx={{ fontFamily:'"Hind Vadodara",sans-serif',fontSize: "18px", color: "black", lineHeight: "27px" }}
                 >
                   {isSmallScreen 
                     ? showMoreStates[index]

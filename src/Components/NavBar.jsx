@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import {
   AppBar,
@@ -8,27 +9,24 @@ import {
   Menu,
   MenuItem,
   IconButton,
-  Drawer,
   List,
   ListItem,
   ListItemText,
-  useMediaQuery
+  Collapse,
+  useMediaQuery,
+  TextField,
+  InputAdornment,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useTheme } from "@mui/material/styles";
-import { useNavigate } from "react-router-dom";  
+import { useNavigate,useLocation } from "react-router-dom";
 import logo from "../assets/ocean-waves.png";
-import { Collapse } from "@mui/material";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
-import { TextField, InputAdornment } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
-import CustomMenuItem from "./CustomMenuItem";
-
-
 
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -38,15 +36,14 @@ export default function NavBar() {
   const [showSearch, setShowSearch] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
-
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+
+  const location = useLocation();
 
   const handleOpenMenu = (event) => setAnchorEl(event.currentTarget);
   const handleCloseMenu = () => setAnchorEl(null);
-
-  const toggleDrawer = (open) => () => setDrawerOpen(open);
 
   const menuItems = [
     { text: "HOME", link: "/" },
@@ -54,13 +51,12 @@ export default function NavBar() {
     {
       text: "SERVICES",
       subItems: [
-        { text: "SECURITY & SURVIVALENCE", link: "/servicecctv" },
+        { text: "SECURITY & SURVEILLANCE", link: "/servicecctv" },
         { text: "NETWORK SOLUTIONS", link: "/network" },
         { text: "DOOR ACCESS & BIOMETRIC TIME ATTENDANCE", link: "/door-bio" },
         { text: "SWING & SLIDING GATES", link: "/gates" },
-        { text: "TEND & CAR PORCHES", link: "/porches" },
+        { text: "TENT & CAR PORCHES", link: "/porches" },
         { text: "OFFICE EQUIPMENTS AND COMPUTERS", link: "/computers" },
-
       ],
     },
     { text: "PRODUCTS", link: "/products" },
@@ -68,17 +64,23 @@ export default function NavBar() {
   ];
 
   return (
-    <AppBar position="fixed" sx={{ backgroundColor: "#4A6B4A", minHeight:{xs:70,sm:80} }}>
-      <Toolbar sx={{ minHeight:{xs:70,sm:80} , display: "flex", pt: 1 }}>
-        {/* Logo + Titles */}
-        <Box sx={{ display: "flex", alignItems: "center", cursor:"pointer" }} onClick={() => navigate("/")}>
+    <AppBar
+      position="fixed"
+      sx={{ backgroundColor: "#4A6B4A", minHeight: { xs: 70, sm: 80 } }}
+    >
+      <Toolbar sx={{ minHeight: { xs: 70, sm: 80 }, display: "flex", pt: 1 }}>
+        {/* Logo */}
+        <Box
+          sx={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+          onClick={() => navigate("/")}
+        >
           <Box
             component="img"
             src={logo}
             alt="Logo"
             sx={{
               height: { xs: 40, sm: 50, md: 70 },
-              mr: {xs:0,md:2},
+              mr: { xs: 0, md: 2 },
             }}
           />
           <Box sx={{ p: 1 }}>
@@ -86,7 +88,7 @@ export default function NavBar() {
               variant="body1"
               sx={{
                 fontFamily: "'Inter', sans-serif",
-                fontSize: { xs: "13px", sm: "16px", md: "22px",lg:'33px' },
+                fontSize: { xs: "13px", sm: "16px", md: "22px", lg: "33px" },
                 color: "white",
                 fontWeight: "bold",
                 textAlign: "start",
@@ -98,9 +100,9 @@ export default function NavBar() {
               variant="body1"
               sx={{
                 fontFamily: "'Inter',sans-serif",
-                fontSize: { xs: "10px", sm: "13px", md: "16px",lg:'20px' },
+                fontSize: { xs: "10px", sm: "13px", md: "16px", lg: "20px" },
                 color: "white",
-                fontWeight:"bold",
+                fontWeight: "bold",
                 textAlign: "start",
               }}
             >
@@ -108,105 +110,164 @@ export default function NavBar() {
             </Typography>
           </Box>
         </Box>
-            {/* Menu for Large Screens */}
-            {!isMobile && !showSearch && (   // hide menu items when search bar is active
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "flex-end",
-                  flexGrow: 1,
-                  gap:2
-                }}
-              >
-                <Button sx={{ color: "white", fontSize:{sm:'10px',md:'16px'}, fontFamily: "Arial" }} onClick={() => navigate("/")}>
-                  HOME
-                </Button>
-                <Button sx={{ color: "white", fontSize:{sm:'10px',md:'16px'}, fontFamily: "Arial" }} onClick={() => navigate("/about")}>
-                  ABOUT US
-                </Button>
-                <Button
-                  sx={{ color: "white", fontSize: {sm:'10px',md:'16px'}, fontFamily: "Arial" }}
-                  onClick={handleOpenMenu}
-                  endIcon={<ArrowDropDownIcon />}
-                >
-                  SERVICES
-                </Button>
-                <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleCloseMenu}>
-                  {menuItems[2].subItems.map((sub, i) => (
-                    <MenuItem key={i} onClick={() => { handleCloseMenu(); navigate(sub.link); }}
-                      sx={{
-                            backgroundColor: i % 2 === 0 ? "#f5f5f5" : "#e0e0e0", // alternate bg
-                              "&:hover": {
-                                backgroundColor: i % 2 === 0 ? "#d6d6d6" : "#c2c2c2", // hover effect
-                                },
-                          }}    
-                    >
-                      {sub.text}
-                    </MenuItem>
-                  ))}
-                </Menu>
-                <Button sx={{ color: "white", fontSize: {sm:'10px',md:'16px'}, fontFamily: "Arial" }} onClick={() => navigate("/products")}>
-                  PRODUCTS
-                </Button>
-                <Button sx={{ color: "white", fontSize: {sm:'10px',md:'16px'}, fontFamily: "Arial" }} onClick={() => navigate("/contact")}>
-                  CONTACT
-                </Button>
-              </Box>
-            )}
 
-        {/* Hamburger Menu for Mobile */}
+        {/* Desktop Menu */}
+        {!isMobile && !showSearch && (
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "flex-end",
+              flexGrow: 1,
+              gap: 2,
+            }}
+          >
+            <Button sx={{ color: "white",}}
+             onClick={() => navigate("/")}>
+              HOME
+            </Button>
+            <Button sx={{ color: "white" }} onClick={() => navigate("/about")}>
+              ABOUT US
+            </Button>
+            <Button
+              sx={{ color: "white" }}
+              onClick={handleOpenMenu}
+              endIcon={<ArrowDropDownIcon />}
+            >
+              SERVICES
+            </Button>
+            <Menu
+              anchorEl={anchorEl}
+              open={Boolean(anchorEl)}
+              onClose={handleCloseMenu}
+            >
+              {menuItems[2].subItems.map((sub, i) => (
+                <MenuItem
+                  key={i}
+                  onClick={() => {
+                    handleCloseMenu();
+                    navigate(sub.link);
+                  }}
+                  sx={{
+                    backgroundColor: i % 2 === 0 ? "#192c1cff" : "#ffffff", 
+                    color: i % 2 === 0 ? "#ffffff" : "#000000",           
+                    "&:hover": {
+                    backgroundColor: i % 2 === 0 ? "#333333" : "#f0f0f0", 
+                  },
+                }}
+                >
+                  {sub.text}
+                </MenuItem>
+              ))}
+            </Menu>
+            <Button sx={{ color: "white" }} onClick={() => navigate("/products")}>
+              PRODUCTS
+            </Button>
+            <Button sx={{ color: "white" }} onClick={() => navigate("/contact")}>
+              CONTACT
+            </Button>
+          </Box>
+        )}
+
+        {/* Mobile Hamburger */}
         {isMobile && (
           <>
-            <Box sx={{ cursor:"pointer",color: "white", ml: "auto" }} onClick={toggleDrawer(true)}>
-              <MenuIcon sx={{fontSize: 32}} />
+            <Box
+              sx={{ cursor: "pointer", color: "white", ml: "auto" }}
+              onClick={() => setDrawerOpen(true)}
+            >
+              <MenuIcon sx={{ fontSize: 32 }} />
             </Box>
-            <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
-                <Box sx={{ width: 250,bgcolor:"#d3d1d1ff" }} role="presentation">
+
+            <AnimatePresence>
+              {drawerOpen && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  style={{
+                    position: "fixed",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    background: "rgba(78, 104, 79, 0.9)",
+                    backdropFilter: "blur(10px)",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    zIndex: 2000,
+                  }}
+                >
+                  {/* Close button */}
+                  <IconButton
+                    onClick={() => setDrawerOpen(false)}
+                    sx={{ position: "absolute", top: 20, right: 20 }}
+                  >
+                    <CloseIcon sx={{ fontSize: 32 }} />
+                  </IconButton>
+
+                  {/* Logo */}
+                  {/* <Box
+                    component="img"
+                    src={logo}
+                    alt="Logo"
+                    sx={{ height: 60, mb: 5 }}
+                  /> */}
+
+                  {/* Menu items */}
                   <List>
                     {menuItems.map((item, index) =>
                       item.subItems ? (
                         <React.Fragment key={index}>
-                          <ListItem button onClick={() => setOpenServices(!openServices)}
-                              sx={{
-                                backgroundColor: index % 2 === 0?"#e3f2fd": "#fff3e0",
-                              "&:hover": {
-                                backgroundColor: index % 2 === 0? "#bbdefb" : "#ffe0b2",
-                              },
-                            }}
-                            >
-                            <ListItemText primary={item.text} 
+                          <ListItem
+                            button
+                            onClick={() => setOpenServices(!openServices)}
+                            sx={{ justifyContent: "center",
+                                    backgroundColor: index % 2 === 0 ? "#f5f5f5" : "#ffffff", 
+                                    "&:hover": {
+                                    backgroundColor: index % 2 === 0 ? "#e0e0e0" : "#f0f0f0", 
+                                },
+                             }}
+                          >
+                            <ListItemText
+                              primary={item.text}
                               primaryTypographyProps={{
-                                fontSize:"18px",
-                                fontFamily:"Arial",
-                                fontWeight:"bold",
-                                color:"#395f43ff"
+                                fontSize: "22px",
+                                fontWeight: "bold",
+                                textAlign: "center",
+                                color:'black'
                               }}
                             />
-                            {openServices ? <ExpandLess /> : <ExpandMore />}
+                            {openServices ? <ExpandLess sx={{ color: "black" }} /> : <ExpandMore sx={{ color: "black" }}/>}
                           </ListItem>
+
                           <Collapse in={openServices} timeout="auto" unmountOnExit>
                             <List component="div" disablePadding>
                               {item.subItems.map((sub, i) => (
                                 <ListItem
                                   button
                                   key={i}
-                                  sx={{ pl: 4,
-                                    backgroundColor: i % 2 === 0 ? "#d6abc8ff" : "#e0ddf0ff",
-                                      "&:hover": {
-                                      backgroundColor: i % 2 === 0 ? "#fbbbf0ff" : "#c3b2ffff", 
-                                    },
-                                  }}
                                   onClick={() => {
                                     navigate(sub.link);
-                                    setDrawerOpen(false); 
+                                    setDrawerOpen(false);
                                   }}
+                                  sx={{ justifyContent: "center",
+                                        pl: 4,
+                                        backgroundColor: i % 2 === 0 ? "#858282ff" : "#eaeaea", // 
+                                        "&:hover": {
+                                        backgroundColor: i % 2 === 0 ? "#e0e0e0" : "#d6d6d6",
+                                        },
+                                   }}
                                 >
-                                  <ListItemText primary={sub.text}
-                                    primaryTypographyProps={{ 
-                                    fontSize: "18px", 
-                                    fontFamily: "Courier New", 
-                                    color: "#444" 
-                                  }} 
+                                  <ListItemText
+                                    primary={sub.text}
+                                    primaryTypographyProps={{
+                                      fontSize: "18px",
+                                      textAlign: "center",
+                                      color:'black'
+                                    }}
                                   />
                                 </ListItem>
                               ))}
@@ -217,89 +278,90 @@ export default function NavBar() {
                         <ListItem
                           button
                           key={index}
-                          sx={{
-                            backgroundColor: index % 2 === 0 ? "#e3f2fd" : "#fff3e0",
-                              "&:hover": {
-                                backgroundColor: index % 2 === 0 ? "#bbdefb" : "#ffe0b2", 
-                            },
-                          }}
                           onClick={() => {
                             navigate(item.link);
-                            setDrawerOpen(false); 
+                            setDrawerOpen(false);
                           }}
+                          sx={{ justifyContent: "center",
+                                backgroundColor: index % 2 === 0 ? "#b3b0b0ff" : "#ffffff", 
+                                "&:hover": {
+                                backgroundColor: index % 2 === 0 ? "#e0e0e0" : "#f0f0f0",
+                                },
+                           }}
                         >
-                      <ListItemText primary={item.text}
-                            primaryTypographyProps = {{ fontSize: "18px", fontFamily: "Arial", fontWeight: "bold", color: "#315c34ff" }}
-                        />
+                          <ListItemText
+                            primary={item.text}
+                            primaryTypographyProps={{
+                              fontSize: "22px",
+                              fontWeight: "bold",
+                              textAlign: "center",
+                              color:'black'
+                            }}
+                          />
                         </ListItem>
                       )
                     )}
                   </List>
-                </Box>
-              </Drawer>
-
+                </motion.div>
+              )}
+            </AnimatePresence>
           </>
         )}
-        {/* Search */}
-          {!isMobile && (
-            <Box sx={{ ml: "auto", display:"flex", alignItems:"center" }}>
-              <AnimatePresence mode="wait">
+
+        {/* Desktop Search */}
+        {!isMobile && (
+          <Box sx={{ ml: "auto", display: "flex", alignItems: "center" }}>
+            <AnimatePresence mode="wait">
               {showSearch ? (
                 <motion.div
                   key="search-bar"
                   initial={{ opacity: 0, width: 50 }}
                   animate={{ opacity: 1, width: "250px" }}
                   exit={{ opacity: 0, width: 0 }}
-                  transition={{ duration: 0.3 ,ease:"easeInOut"}}
-                  style={{ overflow:"hidden"}} // prevents weird layout shift
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  style={{ overflow: "hidden" }}
                 >
-                <TextField
-                  size="small"
-                  variant="outlined"
-                  placeholder="Search..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  onKeyDown={(e) => {
-                  if (e.key === "Enter" && searchTerm.trim()) {
-                    navigate(`/search?q=${searchTerm}`);
-                    setShowSearch(false);
-                    setSearchTerm("");
-                  }
-                }}
-                sx={{minWidth:{xs:"120px", sm:"200px", md:"250px"}, 
-                "& .MuiOutlinedInput-root":{
-                  color:"white",
-                  "& fieldset":{
-                    borderColor:"white",
-                  },
-                  "&:hover fieldset":{
-                    borderColor:'white',
-                  },
-                  "&.Mui-focused fieldset":{
-                    borderColor:"white"
-                  },
-                },
-                "& .MuiInputBase-input::placeholder":{
-                  color:"white",
-                  opacity:1,
-                },
-              
-              }}
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <SearchIcon  sx={{color:"white"}}/>
-                      </InputAdornment>
-                    ),
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <IconButton onClick={() => setShowSearch(false)}>
-                          <CloseIcon  sx={{color:"white"}}/>
-                        </IconButton>
-                      </InputAdornment>
-                    ),
-                  }}
-                />
+                  <TextField
+                    size="small"
+                    variant="outlined"
+                    placeholder="Search..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" && searchTerm.trim()) {
+                        navigate(`/search?q=${searchTerm}`);
+                        setShowSearch(false);
+                        setSearchTerm("");
+                      }
+                    }}
+                    sx={{
+                      minWidth: { xs: "120px", sm: "200px", md: "250px" },
+                      "& .MuiOutlinedInput-root": {
+                        color: "white",
+                        "& fieldset": { borderColor: "white" },
+                        "&:hover fieldset": { borderColor: "white" },
+                        "&.Mui-focused fieldset": { borderColor: "white" },
+                      },
+                      "& .MuiInputBase-input::placeholder": {
+                        color: "white",
+                        opacity: 1,
+                      },
+                    }}
+                    InputProps={{
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <SearchIcon sx={{ color: "white" }} />
+                        </InputAdornment>
+                      ),
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <IconButton onClick={() => setShowSearch(false)}>
+                            <CloseIcon sx={{ color: "white" }} />
+                          </IconButton>
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
                 </motion.div>
               ) : (
                 <motion.div
@@ -309,17 +371,19 @@ export default function NavBar() {
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.3 }}
                 >
-                <IconButton key="search-icon" onClick={() => setShowSearch(true)} sx={{ color: "white" }}>
-                  <SearchIcon />
-                </IconButton>
+                  <IconButton
+                    key="search-icon"
+                    onClick={() => setShowSearch(true)}
+                    sx={{ color: "white" }}
+                  >
+                    <SearchIcon />
+                  </IconButton>
                 </motion.div>
               )}
-              </AnimatePresence>
-            </Box>
-          )}
-
+            </AnimatePresence>
+          </Box>
+        )}
       </Toolbar>
     </AppBar>
   );
 }
-

@@ -103,6 +103,7 @@ function Services() {
                   bgcolor: 'rgba(0,0,0,0.6)',
                   color: '#fff',
                   textAlign: 'center',
+                  textShadow: '1px 1px 6px rgba(0,0,0,0.6)',
                   fontFamily:'sans-serif',
                   py: 4,
                   transition: "opacity 0.3s ease"

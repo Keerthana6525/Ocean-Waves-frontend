@@ -7,6 +7,7 @@ const About = () => {
   const [showMore, setShowMore] = useState(false);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const isMediumRange = useMediaQuery("(min-width:800px) and (max-width:1030px)");
 
   const CustomBox = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -37,11 +38,13 @@ const About = () => {
    prices on the 6,000+ products we stock and supply for your daily office needs. We strive to
     deliver comprehensive solutions that enhance workplace efficiency by combining outstanding
      customer service, quick turnaround times, and a constantly evolving product range. By 
-     anticipating the demands of today’s fast-changing office environment, we ensure that you
+     anticipating the demands of today's fast-changing office environment, we ensure that you
       always have access to the best tools and resources to keep your business running smoothly.`
 
   const shortText = `Ocean Waves Security Systems was established in the year 2006 in Abu Dhabi,
    the capital of United Arab Emirates...`;
+
+  const shouldShowShort = (isSmallScreen || isMediumRange) && !showMore;
 
   return (
     <Box sx={{ pt: { xs: 8, md: 16 }, pb: {xs:1.5,sm:3,md:10}, px: 2 ,bgcolor: "#fff"}}>
@@ -71,11 +74,11 @@ const About = () => {
               OCEAN WAVES SECURITY SYSTEM L.L.C.
             </Typography>
 
-            <Typography sx={{ fontFamily:'Arial',fontSize: '16px', color: 'black', lineHeight: '27px' }}>
-              {isSmallScreen && !showMore ? shortText : fullText}
+            <Typography sx={{ fontFamily:'"Hind Vadodara",sans-serif',fontSize: '18px', color: 'black', lineHeight: '27px' }}>
+              {shouldShowShort ? shortText : fullText}
             </Typography>
 
-            {isSmallScreen && (
+            {(isSmallScreen || isMediumRange) && (
               <Button onClick={() => setShowMore(!showMore)} sx={{ mt: 2 }}>
                 {showMore ? "Show Less" : "Read More"}
               </Button>
