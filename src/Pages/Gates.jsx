@@ -55,8 +55,9 @@ const aboutSections = [
   {
     img: aboutimg1,
     title: "SWING GATE",
-    fullText: `Swing gate openers are designed for large-sized Swing gates, and such a system is highly reliable. Due to their great weight, Swing gates require a heavy-duty opener appropriate for their dimensions. This type of mechanism opens both gates simultaneously, which is very conve- nient and time-saving. Another strength of dual gate openers 
-    is their versatility. You can use them to open a single gate as well, Your looking for new openers for your villa gate or your factory gate, or you facing issues with your existing Automatic gate system. The material and performance of outdoor swing gates and openers must be built to resist a variety of working circumstances, including rain, wind, cold, and heat. The use of high-quality, low-maintenance materials ensures the lifetime and trouble-free operation of our openers, which is something we aim for. Our outdoor gate openers are always designed to blend in with your gate for a fashionable, modern appearance.`,
+    fullText: `Swing gate openers are designed for large-sized Swing gates, and such a system is highly reliable. Due to their great weight, Swing gates require a heavy-duty opener appropriate for their dimensions. This type of mechanism opens both gates simultaneously, which is very convenient and time-saving. Another strength of dual gate openers 
+    is their versatility. You can use them to open a single gate as well, Your looking for new openers for your villa gate or your factory gate, or you facing issues with your existing Automatic gate system. The material and performance of outdoor swing gates and openers must be built to resist a variety of working circumstances, including rain, wind, cold, and heat. The use of high-quality, low-maintenance materials ensures the lifetime and trouble-free operation of our openers, which is something we aim for. 
+    Our outdoor gate openers are always designed to blend in with your gate for a fashionable, modern appearance.`,
     shortText: `Swing gate openers are designed for large-sized Swing gates, and such a system is highly reliable...`,
   },
   {
@@ -65,19 +66,6 @@ const aboutSections = [
     fullText: `Sliding gate openers are the most common and convenient solution for driveway gates. You can safely park your car close to the gates, without exposing the vehicle to the risk of being hit. This is because sliding gates open sidewards, leaving more 
     room on your driveway. Besides, sliding gates are more secure and more difficult to force open. We have professional technical team for New Automatic gates installations and maintenance of 
     automatic gates.`,
-
-    features:[
-        " Reverse Motion",
-"Easy Installation",
-"Low Maintenance",
-"Superior Strength",
-"Guide Rail/Roller",
-"Precision Bearings",
-"Photocell Safety Beams",
-"Safety Loop Detectors",
-"Force Limitation Safety",
-"Drive Gear Motor",
-    ],
 
     shortText: `Sliding gate openers are the most common and convenient solution for driveway gates...`,
   },
@@ -201,7 +189,7 @@ function Gates() {
             mt: 6,
             minHeight: { xs: "auto", md: "400px" },
             bgcolor: "#ece2e6ff",
-            border:"5px solid #8a878aff"
+            // border:"5px solid #8a878aff"
           }}
         >
           <Container>
@@ -215,7 +203,7 @@ function Gates() {
                     maxWidth: "500px",
                     width: { xs: "250px", sm: "300px", md: "500px" },
                     height: {xs:"150px",sm:"200px",md:"350px"},
-                    border:"3px solid black"
+                    // border:"3px solid black"
                   }}
                 />
               </ImgContainer>

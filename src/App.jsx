@@ -24,6 +24,7 @@ import Gates from "./Pages/Gates";
 import Computers from "./Pages/Computers";
 import Porches from "./Pages/Porches";
 import SearchResults from "./Components/SearchResults";
+import AiSolutions from "./Pages/AiSolutions";
 
 function AppContent() {
   const location = useLocation();
@@ -39,6 +40,7 @@ function AppContent() {
     "/gates",
     "/porches",
     "/computers",
+    "/aisolutions"
   ];
 
   // Special case: Search page (with query param)
@@ -69,6 +71,7 @@ function AppContent() {
           <Route path="/gates" element={<Gates />} />
           <Route path="/porches" element={<Porches />} />
           <Route path="/computers" element={<Computers />} />
+          <Route path="/aisolutions" element={<AiSolutions/>} />
         </Routes>
         <Footer />
       </>

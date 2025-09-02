@@ -183,7 +183,7 @@ function Door_bio() {
             mt: 3,
             mx:4,
             bgcolor: "#e0d7daff",
-            border:"5px solid #666866ff"
+            // border:"5px solid #666866ff"
           }}
         >
           <Container>
@@ -197,7 +197,7 @@ function Door_bio() {
                     maxWidth: "500px",
                     width: { xs: "250px", sm: "300px", md: "500px" },
                     height: "auto",
-                    border:"3px solid black"
+                    // border:"3px solid black"
                   }}
                 />
               </ImgContainer>

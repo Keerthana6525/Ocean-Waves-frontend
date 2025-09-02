@@ -57,6 +57,7 @@ export default function NavBar() {
         { text: "SWING & SLIDING GATES", link: "/gates" },
         { text: "TENT & CAR PORCHES", link: "/porches" },
         { text: "OFFICE EQUIPMENTS AND COMPUTERS", link: "/computers" },
+        {text:"AI SOLUTIONS", link:"/aisolutions"}
       ],
     },
     { text: "PRODUCTS", link: "/products" },
@@ -207,15 +208,7 @@ export default function NavBar() {
                   >
                     <CloseIcon sx={{ fontSize: 32 }} />
                   </IconButton>
-
-                  {/* Logo */}
-                  {/* <Box
-                    component="img"
-                    src={logo}
-                    alt="Logo"
-                    sx={{ height: 60, mb: 5 }}
-                  /> */}
-
+                 
                   {/* Menu items */}
                   <List>
                     {menuItems.map((item, index) =>
