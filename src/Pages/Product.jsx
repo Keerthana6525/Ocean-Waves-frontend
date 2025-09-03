@@ -243,8 +243,8 @@ function ProductCarousel({ items }) {
               variant="contained"
               sx={{
                 mt: 2,
-                bgcolor: "#4A6B4A",
-                "&:hover": { bgcolor: "#278127ff" },
+                bgcolor: "#4A6B4A",color:"#fff",
+                "&:hover": { bgcolor: "#278127ff",color:'#99cab3ff' },
               }}
               fullWidth
               component="a"

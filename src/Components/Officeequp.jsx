@@ -123,8 +123,8 @@ function Officeequp() {
                           variant="contained"
                           sx={{
                                mt: 2,
-                              bgcolor: "#4A6B4A",
-                                  "&:hover": { bgcolor: "#278127ff" },
+                              bgcolor: "#4A6B4A",color:'#fff',
+                                  "&:hover": { bgcolor: "#278127ff" ,color:'#a1d1bbff'},
                                   }}
                                fullWidth
                               component="a"

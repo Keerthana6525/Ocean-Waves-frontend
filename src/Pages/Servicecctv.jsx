@@ -140,7 +140,16 @@ function Servicecctv() {
         >
           Our Products
         </Typography>
-
+      <Box
+                  sx={{
+                  "& .swiper-button-next, & .swiper-button-prev": {
+                    color: "#141b11ff",   
+                  },
+                  "& .swiper-button-next::after, & .swiper-button-prev::after": {
+                  fontSize: "35px",   
+                  },
+                  }}
+                >
         <Swiper
           modules={[Autoplay, Navigation]}
           autoplay={{ delay: 2500, disableOnInteraction: false }}
@@ -194,8 +203,8 @@ function Servicecctv() {
                           variant="contained"
                             sx={{
                                 mt: 2,
-                                bgcolor: "#4A6B4A",
-                                "&:hover": { bgcolor: "#278127ff" },
+                                bgcolor: "#4A6B4A",color:'#fff',
+                                "&:hover": { bgcolor: "#278127ff" ,color:'#99cab3ff'},
                                  }}
                            fullWidth
                            component="a"
@@ -209,6 +218,7 @@ function Servicecctv() {
             </SwiperSlide>
           ))}
         </Swiper>
+        </Box>
       </Box>
 
       {/* About Us Section */}
@@ -249,7 +259,14 @@ function Servicecctv() {
               </Typography>
 
               {isSmallScreen && (
-                <Button onClick={() => setShowMore(!showMore)} sx={{ mt: 2 }}>
+                <Button onClick={() => setShowMore(!showMore)} sx={{ mt: 2 
+                  ,color: "#5f8354",             
+                  fontWeight: "bold",
+                  textTransform: "none",        
+                  "&:hover": { color: "#4d6b49" } 
+                }}
+                variant="text" 
+                >
                   {showMore ? "Show Less" : "Read More"}
                 </Button>
               )}

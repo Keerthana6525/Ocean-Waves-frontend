@@ -159,7 +159,16 @@ function Computers() {
         >
           Our Network Products
         </Typography>
-
+<Box
+        sx={{
+        "& .swiper-button-next, & .swiper-button-prev": {
+          color: "#141b11ff",   
+        },
+        "& .swiper-button-next::after, & .swiper-button-prev::after": {
+        fontSize: "35px",   
+        },
+        }}
+      >
         <Swiper
           modules={[Autoplay, Navigation]}
           autoplay={{ delay: 2500, disableOnInteraction: false }}
@@ -211,8 +220,8 @@ function Computers() {
                 <Button
                   variant="contained"
                   sx={{
-                    bgcolor: "#5f8354ff",
-                    "&:hover": { bgcolor: "#4d6b49ff" },
+                    bgcolor: "#5f8354ff",color:"#fff",
+                    "&:hover": { bgcolor: "#4d6b49ff" ,color:'#99cab3ff'},
                   }}
                   fullWidth
                            component="a"
@@ -226,6 +235,7 @@ function Computers() {
             </SwiperSlide>
           ))}
         </Swiper>
+        </Box>
       </Box>
 
       {/* About Us Section */}
@@ -266,7 +276,14 @@ function Computers() {
               </Typography>
 
               {isSmallScreen && (
-                <Button onClick={() => setShowMore(!showMore)} sx={{ mt: 2 }}>
+                <Button onClick={() => setShowMore(!showMore)} sx={{ mt: 2
+                  ,color: "#5f8354",             
+                  fontWeight: "bold",
+                  textTransform: "none",        
+                  "&:hover": { color: "#4d6b49" } 
+                }}
+                variant="text" 
+                 >
                   {showMore ? "Show Less" : "Read More"}
                 </Button>
               )}

@@ -224,7 +224,14 @@ function Door_bio() {
                 {isSmallScreen && (
                   <Button
                     onClick={() => toggleShowMore(index)}
-                    sx={{ mt: 2 }}
+                    sx={{ mt: 2
+                      ,color: "#5f8354",             
+                  fontWeight: "bold",
+                  textTransform: "none",        
+                  "&:hover": { color: "#4d6b49" } 
+                }}
+                variant="text" 
+                     
                   >
                     {showMoreStates[index] ? "Show Less" : "Read More"}
                   </Button>
@@ -234,7 +241,16 @@ function Door_bio() {
           </Container>
         </Box>
       ))}
-
+<Box
+        sx={{
+        "& .swiper-button-next, & .swiper-button-prev": {
+          color: "#141b11ff",   
+        },
+        "& .swiper-button-next::after, & .swiper-button-prev::after": {
+        fontSize: "35px",   
+        },
+        }}
+      >
       <Swiper
           modules={[Autoplay, Navigation]}
           autoplay={{ delay: 2500, disableOnInteraction: false }}
@@ -288,8 +304,8 @@ function Door_bio() {
                 <Button
                   variant="contained"
                   sx={{
-                    bgcolor: "#5f8354ff",
-                    "&:hover": { bgcolor: "#4d6b49ff" },
+                    bgcolor: "#5f8354ff",color:"#fff",
+                    "&:hover": { bgcolor: "#4d6b49ff" ,color:'#99cab3ff'},
                   }}
                   fullWidth
                   component="a"
@@ -303,7 +319,7 @@ function Door_bio() {
             </SwiperSlide>
           ))}
         </Swiper>
-
+</Box>
       {/* Types of Services Section */}
       <Box sx={{ py: {xs:2,sm:4,md:8}, bgcolor: "#fff" }}>
         <Container>

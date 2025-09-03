@@ -232,7 +232,14 @@ function Gates() {
                 {isSmallScreen && (
                   <Button
                     onClick={() => toggleShowMore(index)}
-                    sx={{ mt: 2 }}
+                    sx={{ mt: 2
+                      ,color: "#5f8354",             
+                  fontWeight: "bold",
+                  textTransform: "none",        
+                  "&:hover": { color: "#4d6b49" } 
+                }}
+                variant="text" 
+                     
                   >
                     {showMoreStates[index] ? "Show Less" : "Read More"}
                   </Button>

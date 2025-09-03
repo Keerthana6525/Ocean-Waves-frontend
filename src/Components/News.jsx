@@ -4,8 +4,11 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Img1 from '../assets/news3.jpeg';
-import Img2 from '../assets/news5.jpg';
+// import Img1 from "../assets/news3.jpeg"
+// import Img2 from "../assets/news5.jpg"
+
+import Img1 from "../assets/news5.jpg"
+import Img2 from "../assets/news3.jpeg"
 
 const News = () => {
   // Static news data (replace later with backend)
@@ -111,7 +114,7 @@ const News = () => {
             sx={{
               width: '100%',
               maxWidth: 350,
-              height: 450,
+              height: "500px",
               border: '0.2px solid #131212ff',
               overflow: 'hidden',
               mx: 'auto',

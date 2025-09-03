@@ -75,7 +75,14 @@ const AboutUs = () => {
             </Typography>
 
             {isSmallScreen && (
-              <Button onClick={() => setShowMore(!showMore)} sx={{ mt: 2 }}>
+              <Button onClick={() => setShowMore(!showMore)} sx={{ mt: 2 
+                ,color: "#5f8354",             
+                  fontWeight: "bold",
+                  textTransform: "none",        
+                  "&:hover": { color: "#4d6b49" } 
+                }}
+                variant="text" 
+              >
                 {showMore ? "Show Less" : "Read More"}
               </Button>
             )}

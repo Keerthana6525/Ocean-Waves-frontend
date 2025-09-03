@@ -116,7 +116,16 @@ function AiSolutions() {
         >
           Our AI Products
         </Typography>
-
+<Box
+        sx={{
+        "& .swiper-button-next, & .swiper-button-prev": {
+          color: "#141b11ff",   
+        },
+        "& .swiper-button-next::after, & .swiper-button-prev::after": {
+        fontSize: "35px",   
+        },
+        }}
+      >
         <Swiper
           modules={[Autoplay, Navigation]}
           autoplay={{ delay: 2500, disableOnInteraction: false }}
@@ -171,8 +180,8 @@ function AiSolutions() {
                   variant="contained"
                   sx={{
                     mt: 2,
-                    bgcolor: "#4A6B4A",
-                    "&:hover": { bgcolor: "#278127ff" },
+                    bgcolor: "#4A6B4A",color:'#fff',
+                    "&:hover": { bgcolor: "#278127ff",color:'#99cab3ff' },
                   }}
                   fullWidth
                   component="a"
@@ -186,6 +195,7 @@ function AiSolutions() {
             </SwiperSlide>
           ))}
         </Swiper>
+        </Box>
       </Box>
 
       {/* About Us Section */}
