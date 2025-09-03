@@ -93,7 +93,7 @@ const aboutSections = [
 
 function Door_bio() {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const isSmallScreen = useMediaQuery("(max-width:1050px)");
 
   const [showMoreStates, setShowMoreStates] = useState(
     Array(aboutSections.length).fill(false)
@@ -177,7 +177,7 @@ function Door_bio() {
         <Box
           key={index}
           sx={{
-            pt: { xs: 4, md: 14 },
+            pt: { xs: 1, md: 12 },
             pb: { xs: 2, md: 10 },
             px: {xs:1,sm:2,md:4},
             mt: 3,
@@ -355,4 +355,7 @@ function Door_bio() {
 }
 
 export default Door_bio;
+
+
+
 

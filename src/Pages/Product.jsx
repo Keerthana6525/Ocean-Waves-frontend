@@ -9,7 +9,7 @@ import productimg from "../assets/workplace-.jpg";
 /* ---------------- CCTV PRODUCTS ---------------- */
 import cctv1 from "../assets/pd-1.jpeg";
 import cctv2 from "../assets/pd-2.jpeg";
-import cctv3 from "../assets/pd-3.jpeg";
+import cctv3 from "../assets/pd-3.png";
 import cctv4 from "../assets/pd-4.jpeg";
 import cctv5 from "../assets/cctv-ser.jpg";
 
