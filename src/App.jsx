@@ -25,6 +25,7 @@ import Computers from "./Pages/Computers";
 import Porches from "./Pages/Porches";
 import SearchResults from "./Components/SearchResults";
 import AiSolutions from "./Pages/AiSolutions";
+import News from "./Components/News";
 
 function AppContent() {
   const location = useLocation();
@@ -90,6 +91,7 @@ function AppContent() {
       <Products />
       <Accessories />
       <Officeequp />
+      <News/>
       <Brands />
       <Footer />
     </>
